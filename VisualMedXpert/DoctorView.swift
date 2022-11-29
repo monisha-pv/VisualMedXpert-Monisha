@@ -27,7 +27,7 @@ struct DoctorView: View {
                 }
                    
             }.onAppear(perform: getPatients)
-                .navigationBarTitle("Patients")
+                .navigationBarTitle("Patient")
                 .navigationBarItems(trailing: Button(action: {showAdd.toggle()}, label: {
                     Image(systemName: "plus.circle")
                 }))
