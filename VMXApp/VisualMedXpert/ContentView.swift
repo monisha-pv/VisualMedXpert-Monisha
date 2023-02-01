@@ -33,7 +33,7 @@ struct ContentView: View {
 struct ARViewContainer: UIViewRepresentable {
     @Binding var modelConfirmedForPlacement: String?
     
-    
+    // Update AR placement (adding interaction)
     func updateUIView(_ uiView: ARView, context: Context) {
         if let modelName = self.modelConfirmedForPlacement {
             
@@ -58,7 +58,7 @@ struct ARViewContainer: UIViewRepresentable {
         }
     }
     
-    
+    // AR objects placement
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)

@@ -44,7 +44,7 @@ struct DoctorUpdateView: View {
     }
     
     func putPatients() {
-        guard let url = URL(string: "http://192.168.0.30:8000/patients/\(self.patient.id)") else {
+        guard let url = URL(string: "http://10.212.78.114:8000/patients/\(self.patient.id)") else {
             print("The API is down/not connected")
             fatalError("endpoint not active")
             
