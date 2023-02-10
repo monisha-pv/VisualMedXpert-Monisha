@@ -10,6 +10,7 @@
 		E36757922942536300DBFE29 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = E36757912942536300DBFE29 /* FocusEntity */; };
 		E36757A629429BC000DBFE29 /* Human_skull.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E36757A229429BBF00DBFE29 /* Human_skull.usdz */; };
 		E36757A729429BC000DBFE29 /* Lungs.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E36757A329429BC000DBFE29 /* Lungs.usdz */; };
+		E37A27692996ECDF00934B83 /* XrayImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A27682996ECDF00934B83 /* XrayImageClassification.swift */; };
 		E380CDAC29208F3400B9B891 /* DoctorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */; };
 		E380CDAE2920A09900B9B891 /* DoctorUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */; };
 		E38601D42944084C00F414B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38601D32944084C00F414B7 /* ContentView.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		E36757A229429BBF00DBFE29 /* Human_skull.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Human_skull.usdz; sourceTree = "<group>"; };
 		E36757A329429BC000DBFE29 /* Lungs.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Lungs.usdz; sourceTree = "<group>"; };
+		E37A27682996ECDF00934B83 /* XrayImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XrayImageClassification.swift; sourceTree = "<group>"; };
 		E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailView.swift; sourceTree = "<group>"; };
 		E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorUpdateView.swift; sourceTree = "<group>"; };
 		E38601D32944084C00F414B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				E3B6A26029204917008904BD /* PatientAPITypes.swift */,
 				E3B6A25E292044B8008904BD /* PatientView.swift */,
 				E38601D32944084C00F414B7 /* ContentView.swift */,
+				E37A27682996ECDF00934B83 /* XrayImageClassification.swift */,
 				E39777C8298D93CF00610454 /* PatientChatBot.swift */,
 				E39777CA298D9C6100610454 /* VMXBotStruct.swift */,
 				E3B6A227291F4E4E008904BD /* Assets.xcassets */,
@@ -337,6 +340,7 @@
 				E3B6A224291F4E4B008904BD /* VisualMedXpertApp.swift in Sources */,
 				E39777C9298D93CF00610454 /* PatientChatBot.swift in Sources */,
 				E39777CB298D9C6100610454 /* VMXBotStruct.swift in Sources */,
+				E37A27692996ECDF00934B83 /* XrayImageClassification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

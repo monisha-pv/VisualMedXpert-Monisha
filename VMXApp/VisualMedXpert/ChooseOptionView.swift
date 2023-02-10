@@ -21,18 +21,19 @@ struct ChooseOptionView: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                 }
-//                Spacer().frame(height: 50)
-//                NavigationLink(destination: PatientView()) {
-//                    Text("I am a Patient")
-//                        .padding()
-//                        .background(.black)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(15)
-//                }
                 
                 Spacer().frame(height: 50)
                 NavigationLink(destination: ContentView()) {
                     Text("Augumented Reality (Medical Trainee)")
+                        .padding()
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                }
+                
+                Spacer().frame(height: 50)
+                NavigationLink(destination: XrayImageClassification()) {
+                    Text("Image Classification (AI)")
                         .padding()
                         .background(.black)
                         .foregroundColor(.white)
