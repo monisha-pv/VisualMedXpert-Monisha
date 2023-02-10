@@ -15,6 +15,8 @@
 		E38601D42944084C00F414B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38601D32944084C00F414B7 /* ContentView.swift */; };
 		E38601D52944125700F414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B6A227291F4E4E008904BD /* Assets.xcassets */; };
 		E38601DA29442AC900F414B7 /* SmartHitTest in Frameworks */ = {isa = PBXBuildFile; productRef = E38601D929442AC900F414B7 /* SmartHitTest */; };
+		E39777C9298D93CF00610454 /* PatientChatBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39777C8298D93CF00610454 /* PatientChatBot.swift */; };
+		E39777CB298D9C6100610454 /* VMXBotStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39777CA298D9C6100610454 /* VMXBotStruct.swift */; };
 		E3B6A224291F4E4B008904BD /* VisualMedXpertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */; };
 		E3B6A226291F4E4B008904BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A225291F4E4B008904BD /* LoginView.swift */; };
 		E3B6A235291F4E4E008904BD /* VisualMedXpertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A234291F4E4E008904BD /* VisualMedXpertTests.swift */; };
@@ -53,6 +55,8 @@
 		E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailView.swift; sourceTree = "<group>"; };
 		E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorUpdateView.swift; sourceTree = "<group>"; };
 		E38601D32944084C00F414B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E39777C8298D93CF00610454 /* PatientChatBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientChatBot.swift; sourceTree = "<group>"; };
+		E39777CA298D9C6100610454 /* VMXBotStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMXBotStruct.swift; sourceTree = "<group>"; };
 		E3B6A220291F4E4B008904BD /* VisualMedXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualMedXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualMedXpertApp.swift; sourceTree = "<group>"; };
 		E3B6A225291F4E4B008904BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				E3B6A26029204917008904BD /* PatientAPITypes.swift */,
 				E3B6A25E292044B8008904BD /* PatientView.swift */,
 				E38601D32944084C00F414B7 /* ContentView.swift */,
+				E39777C8298D93CF00610454 /* PatientChatBot.swift */,
+				E39777CA298D9C6100610454 /* VMXBotStruct.swift */,
 				E3B6A227291F4E4E008904BD /* Assets.xcassets */,
 				E3B6A24D291F4EEB008904BD /* GoogleService-Info.plist */,
 				E3B6A229291F4E4E008904BD /* Preview Content */,
@@ -329,6 +335,8 @@
 				E3B6A226291F4E4B008904BD /* LoginView.swift in Sources */,
 				E3B6A25D292044AB008904BD /* DoctorView.swift in Sources */,
 				E3B6A224291F4E4B008904BD /* VisualMedXpertApp.swift in Sources */,
+				E39777C9298D93CF00610454 /* PatientChatBot.swift in Sources */,
+				E39777CB298D9C6100610454 /* VMXBotStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

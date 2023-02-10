@@ -68,16 +68,16 @@ struct LoginView: View {
                 } label: {
                     Text("Sign Up")
                 }
-                .padding(.trailing)
+                //.padding(.trailing)
                 
                 Button {
                     login()
                 } label: {
                     Text("Log In")
                 }
-                .padding(.leading)
+                //.padding(.leading)
             }
-            .disabled(buttonsDisabled)
+            //.disabled(buttonsDisabled)
             .buttonStyle(.borderedProminent)
             .tint(Color(.black))
             .font(.title2)
@@ -86,14 +86,17 @@ struct LoginView: View {
             .navigationDestination(for: String.self) { view in
                 if view == "ChooseOptionView" {
                     ChooseOptionView()
+                } else {
+                    if view == "PatientView" {
+                        PatientView()
+                    }
                 }
             }
-            
         }
         .alert(alertMessage, isPresented: $showingAlert) {
             Button("OK", role: .cancel) {}
         }
-
+        
         .onAppear {
             // if logged in navigate to the new screen and skip login screen
             if Auth.auth().currentUser != nil {
@@ -103,41 +106,48 @@ struct LoginView: View {
         }
     }
     
-    func enableButtons() {
-        let emailOK = email.count > 6 && email.contains("@")
-        let passwordOK = password.count > 6
-        buttonsDisabled = !(emailOK && passwordOK)
-    }
-    
-    func register() {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error
-            in
-            if let error = error {
-                print("SIGNIN ERROR: \(error.localizedDescription)")
-                alertMessage = "SIGNIN ERROR: \(error.localizedDescription)"
-                showingAlert = true
-            } else {
-                print("Registration success")
-                path.append("ChooseOptionView")
+        
+        func enableButtons() {
+            let emailOK = email.count > 6 && email.contains("@")
+            let passwordOK = password.count > 6
+            buttonsDisabled = !(emailOK && passwordOK)
+        }
+        
+        func register() {
+            Auth.auth().createUser(withEmail: email, password: password) { result, error
+                in
+                if let error = error {
+                    print("SIGNIN ERROR: \(error.localizedDescription)")
+                    alertMessage = "SIGNIN ERROR: \(error.localizedDescription)"
+                    showingAlert = true
+                } else {
+                    print("Registration success")
+                    alertMessage = "Successfully registered!"
+                    //path.append("ChooseOptionView")
+                }
+            }
+        }
+        
+        func login() {
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                if let error = error {
+                    print("LOGIN ERROR: \(error.localizedDescription)")
+                    alertMessage = "LOGIN ERROR: \(error.localizedDescription)"
+                    showingAlert = true
+                } else if email.contains("@patientvmx") {
+                    print("Patient login success")
+                    path.append("PatientView")
+                }
+                else {
+                    if email.contains("@doctorvmx") {
+                        print("Doctor login success")
+                        path.append("ChooseOptionView")
+
+                    }
+                }
             }
         }
     }
-    
-    func login() {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error
-            in
-            if let error = error {
-                print("LOGIN ERROR: \(error.localizedDescription)")
-                alertMessage = "LOGIN ERROR: \(error.localizedDescription)"
-                showingAlert = true
-            } else {
-                print("Login success")
-                path.append("ChooseOptionView")
-            }
-            
-        }
-    }
-}
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

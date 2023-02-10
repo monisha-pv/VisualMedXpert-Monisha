@@ -15,24 +15,24 @@ struct ChooseOptionView: View {
         NavigationView {
             VStack{
                 NavigationLink(destination: DoctorView()) {
-                    Text("I am a Doctor...")
+                    Text("Manage Patient")
                         .padding()
                         .background(.black)
                         .foregroundColor(.white)
                         .cornerRadius(15)
                 }
-                Spacer().frame(height: 50)
-                NavigationLink(destination: PatientView()) {
-                    Text("I am a Patient...")
-                        .padding()
-                        .background(.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(15)
-                }
+//                Spacer().frame(height: 50)
+//                NavigationLink(destination: PatientView()) {
+//                    Text("I am a Patient")
+//                        .padding()
+//                        .background(.black)
+//                        .foregroundColor(.white)
+//                        .cornerRadius(15)
+//                }
                 
                 Spacer().frame(height: 50)
                 NavigationLink(destination: ContentView()) {
-                    Text("AR View")
+                    Text("Augumented Reality (Medical Trainee)")
                         .padding()
                         .background(.black)
                         .foregroundColor(.white)
@@ -48,10 +48,10 @@ struct ChooseOptionView: View {
                 Button("Sign Out") {
                     do {
                         try Auth.auth().signOut()
-                        print("Log out successful!")
+                        print("Doctor log out successful!")
                         dismiss()
                     } catch {
-                        print("ERROR: Could not sign out!")
+                        print("ERROR: Doctor could not sign out!")
                     }
                 }
             }

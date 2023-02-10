@@ -94,7 +94,7 @@ struct PatientAddView : View {
         NavigationView{
             List{
                 Section{
-                    TextField("Patient Fullname", text: $fullname)
+                    TextField("Full name", text: $fullname)
                     TextField("Date Of Birth (DD/MM/YYYY)", text: $dob)
                     TextField("Address", text: $address)
                     TextField("Medical Condition", text: $medcondition)
