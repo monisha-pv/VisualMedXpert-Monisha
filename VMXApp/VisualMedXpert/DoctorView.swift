@@ -42,7 +42,7 @@ struct DoctorView: View {
 
     
     func getPatients() {
-        guard let url = URL(string: "http://10.212.78.114:8000/patients/") else {
+        guard let url = URL(string: "http://10.212.65.133:8000/patients/") else {
             print("The API is down/not connected")
             return
             
@@ -117,7 +117,7 @@ struct PatientAddView : View {
     }
     
     func postPatients() {
-        guard let url = URL(string: "http://10.212.78.114:8000/patients/") else {
+        guard let url = URL(string: "http://10.212.65.133:8000/patients/") else {
             print("The API is down/not connected")
             return
         }

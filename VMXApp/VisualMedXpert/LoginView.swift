@@ -139,7 +139,7 @@ struct LoginView: View {
                     path.append("PatientView")
                 }
                 else {
-                    if email.contains("@doctorvmx") {
+                    if email.contains("@") {
                         print("Doctor login success")
                         path.append("ChooseOptionView")
 

@@ -51,7 +51,7 @@ struct DoctorDetailView: View {
     }
     
     func deletePatients() {
-        guard let url = URL(string: "http://10.212.78.114:8000/patients/\(self.patient.id)") else {
+        guard let url = URL(string: "http://10.212.65.133:8000/patients/\(self.patient.id)") else {
             print("The API is down/not connected")
             return
             

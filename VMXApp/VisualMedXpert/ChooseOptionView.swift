@@ -32,7 +32,7 @@ struct ChooseOptionView: View {
                 }
                 
                 Spacer().frame(height: 50)
-                NavigationLink(destination: XrayImageClassification()) {
+                NavigationLink(destination: DirectImageClassification()) {
                     Text("Image Classification (AI)")
                         .padding()
                         .background(.black)
