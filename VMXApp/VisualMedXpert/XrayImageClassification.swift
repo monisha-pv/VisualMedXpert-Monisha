@@ -59,8 +59,8 @@ struct XrayImageClassification: View {
     
     private func classifyImage() {
         let currentImageName = image
-        
         let image = currentImageName
+        
         let resizedImage = image.resizeImageTo(size:CGSize(width: 299, height: 299))
         guard let buffer = resizedImage?.convertToBuffer()
         else {
