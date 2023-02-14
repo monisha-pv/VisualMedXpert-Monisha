@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DoctorView: View {
-    @State var patients = [PatientElement]()
+    @State var patients = [Patient]()
     @State var showAdd = false
     
     var body: some View {
@@ -42,7 +42,7 @@ struct DoctorView: View {
 
     
     func getPatients() {
-        guard let url = URL(string: "http://10.212.65.133:8000/patients/") else {
+        guard let url = URL(string: "http://10.212.78.114:8000/patients/") else {
             print("The API is down/not connected")
             return
             
@@ -65,7 +65,7 @@ struct DoctorView: View {
             error in
             if let data = data {
                 if let response = try?
-                    JSONDecoder().decode([PatientElement].self, from: data) {
+                    JSONDecoder().decode([Patient].self, from: data) {
                     DispatchQueue.main.async {
                         self.patients = response
                     }
@@ -117,12 +117,12 @@ struct PatientAddView : View {
     }
     
     func postPatients() {
-        guard let url = URL(string: "http://10.212.65.133:8000/patients/") else {
+        guard let url = URL(string: "http://10.212.78.114:8000/patients/") else {
             print("The API is down/not connected")
             return
         }
         
-        let patientData = PatientElement(id: 0, fullname: self.fullname, dob: self.dob, address: self.address, medcondition: self.medcondition,
+        let patientData = Patient(id: 0, fullname: self.fullname, dob: self.dob, address: self.address, medcondition: self.medcondition,
                                   patientdescription: self.patientdescription, symptoms: self.symptoms, medication: self.medication, notes: self.notes)
         
         guard let encoded = try? JSONEncoder().encode(patientData) else {
@@ -146,7 +146,7 @@ struct PatientAddView : View {
             error in
             if let data = data {
                 if let response = try?
-                    JSONDecoder().decode(PatientElement.self, from: data) {
+                    JSONDecoder().decode(Patient.self, from: data) {
                     DispatchQueue.main.async {
                         //self.patients = response
                         self.function()

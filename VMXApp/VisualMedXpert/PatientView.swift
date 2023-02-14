@@ -21,8 +21,18 @@ struct PatientView: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                 }
+                    
+                    Spacer().frame(height: 50)
+                    NavigationLink(destination: ScheduleScanView()) {
+                        Text("Book A Scan")
+                            .padding()
+                            .background(.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(15)
+                    }
+                }
             }
-        }
+        
         
         .navigationBarTitle("Choose An Option")
         .navigationBarBackButtonHidden()

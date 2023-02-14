@@ -10,7 +10,7 @@ import SwiftUI
 struct DoctorDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @State var patient: PatientElement
+    @State var patient: Patient
     @State var showEdit = false
     
     var body: some View {
@@ -51,7 +51,7 @@ struct DoctorDetailView: View {
     }
     
     func deletePatients() {
-        guard let url = URL(string: "http://10.212.65.133:8000/patients/\(self.patient.id)") else {
+        guard let url = URL(string: "http://10.212.78.114:8000/patients/\(self.patient.id)") else {
             print("The API is down/not connected")
             return
             
@@ -85,6 +85,6 @@ struct DoctorDetailView: View {
 
 struct DoctorDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DoctorDetailView(patient: PatientElement(id: 0, fullname: "Monisha V", dob: "31/12/1999", address: "123 ETON ROAD", medcondition: "Cancer", patientdescription: "test patient description", symptoms: "test symptoms", medication: "test medication", notes: "test notes"))
+        DoctorDetailView(patient: Patient(id: 0, fullname: "Monisha V", dob: "31/12/1999", address: "123 ETON ROAD", medcondition: "Cancer", patientdescription: "test patient description", symptoms: "test symptoms", medication: "test medication", notes: "test notes"))
     }
 }

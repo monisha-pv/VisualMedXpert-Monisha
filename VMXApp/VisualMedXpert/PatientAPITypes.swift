@@ -7,11 +7,17 @@
 
 import Foundation
 
-struct PatientElement: Codable, Hashable, Identifiable {
-    let id: Int
-    let fullname, dob, address, medcondition: String
-    let patientdescription, symptoms, medication, notes: String
+struct Patient: Codable, Hashable, Identifiable {
+    
+    var id: Int
+    var fullname: String
+    var dob: String
+    var address: String
+    var medcondition: String
+    var patientdescription: String
+    var symptoms: String
+    var medication: String
+    var notes: String
 }
 
-typealias Patient = [PatientElement]
 

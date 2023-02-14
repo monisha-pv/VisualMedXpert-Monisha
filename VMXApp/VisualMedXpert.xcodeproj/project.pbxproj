@@ -10,6 +10,10 @@
 		E36757922942536300DBFE29 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = E36757912942536300DBFE29 /* FocusEntity */; };
 		E36757A629429BC000DBFE29 /* Human_skull.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E36757A229429BBF00DBFE29 /* Human_skull.usdz */; };
 		E36757A729429BC000DBFE29 /* Lungs.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E36757A329429BC000DBFE29 /* Lungs.usdz */; };
+		E3721D50299A8C5B00088BDF /* ScheduleScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3721D4F299A8C5B00088BDF /* ScheduleScanView.swift */; };
+		E3721D52299A91D800088BDF /* ScheduleScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3721D51299A91D800088BDF /* ScheduleScanModel.swift */; };
+		E3721D54299A9E2200088BDF /* ScheduleScanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3721D53299A9E2200088BDF /* ScheduleScanDetailView.swift */; };
+		E3721D56299AA59A00088BDF /* ScheduleScanUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3721D55299AA59A00088BDF /* ScheduleScanUpdateView.swift */; };
 		E37A27692996ECDF00934B83 /* XrayImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A27682996ECDF00934B83 /* XrayImageClassification.swift */; };
 		E37A276B2996EF2A00934B83 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A276A2996EF2A00934B83 /* ImagePicker.swift */; };
 		E37A276D2996F02200934B83 /* UIImageAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A276C2996F02200934B83 /* UIImageAddition.swift */; };
@@ -57,6 +61,10 @@
 /* Begin PBXFileReference section */
 		E36757A229429BBF00DBFE29 /* Human_skull.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Human_skull.usdz; sourceTree = "<group>"; };
 		E36757A329429BC000DBFE29 /* Lungs.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Lungs.usdz; sourceTree = "<group>"; };
+		E3721D4F299A8C5B00088BDF /* ScheduleScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanView.swift; sourceTree = "<group>"; };
+		E3721D51299A91D800088BDF /* ScheduleScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanModel.swift; sourceTree = "<group>"; };
+		E3721D53299A9E2200088BDF /* ScheduleScanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanDetailView.swift; sourceTree = "<group>"; };
+		E3721D55299AA59A00088BDF /* ScheduleScanUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanUpdateView.swift; sourceTree = "<group>"; };
 		E37A27682996ECDF00934B83 /* XrayImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XrayImageClassification.swift; sourceTree = "<group>"; };
 		E37A276A2996EF2A00934B83 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E37A276C2996F02200934B83 /* UIImageAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageAddition.swift; sourceTree = "<group>"; };
@@ -156,11 +164,15 @@
 				E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */,
 				E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */,
 				E3B6A26029204917008904BD /* PatientAPITypes.swift */,
-				E3B6A25E292044B8008904BD /* PatientView.swift */,
 				E38601D32944084C00F414B7 /* ContentView.swift */,
 				E3862FD429971BC90053634E /* DirectImageClassification.swift */,
 				E37A27682996ECDF00934B83 /* XrayImageClassification.swift */,
+				E3B6A25E292044B8008904BD /* PatientView.swift */,
 				E39777C8298D93CF00610454 /* PatientChatBot.swift */,
+				E3721D51299A91D800088BDF /* ScheduleScanModel.swift */,
+				E3721D4F299A8C5B00088BDF /* ScheduleScanView.swift */,
+				E3721D53299A9E2200088BDF /* ScheduleScanDetailView.swift */,
+				E3721D55299AA59A00088BDF /* ScheduleScanUpdateView.swift */,
 				E39777CA298D9C6100610454 /* VMXBotStruct.swift */,
 				E37A276A2996EF2A00934B83 /* ImagePicker.swift */,
 				E37A276C2996F02200934B83 /* UIImageAddition.swift */,
@@ -344,6 +356,7 @@
 				E37A276B2996EF2A00934B83 /* ImagePicker.swift in Sources */,
 				E37A276F2996F0B200934B83 /* CovidClassifier 1.mlmodel in Sources */,
 				E3B6A25F292044B8008904BD /* PatientView.swift in Sources */,
+				E3721D56299AA59A00088BDF /* ScheduleScanUpdateView.swift in Sources */,
 				E3B6A26129204917008904BD /* PatientAPITypes.swift in Sources */,
 				E3862FD529971BC90053634E /* DirectImageClassification.swift in Sources */,
 				E380CDAE2920A09900B9B891 /* DoctorUpdateView.swift in Sources */,
@@ -356,6 +369,9 @@
 				E3B6A224291F4E4B008904BD /* VisualMedXpertApp.swift in Sources */,
 				E39777C9298D93CF00610454 /* PatientChatBot.swift in Sources */,
 				E39777CB298D9C6100610454 /* VMXBotStruct.swift in Sources */,
+				E3721D52299A91D800088BDF /* ScheduleScanModel.swift in Sources */,
+				E3721D54299A9E2200088BDF /* ScheduleScanDetailView.swift in Sources */,
+				E3721D50299A8C5B00088BDF /* ScheduleScanView.swift in Sources */,
 				E37A27692996ECDF00934B83 /* XrayImageClassification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

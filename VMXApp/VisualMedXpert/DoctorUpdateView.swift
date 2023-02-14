@@ -9,16 +9,16 @@ import SwiftUI
 
 struct DoctorUpdateView: View {
     @Environment(\.presentationMode) var presentationMode
-    @Binding var patient: PatientElement
+    @Binding var patient: Patient
     
-    @State var fullname: String = ""
-    @State var dob: String = ""
-    @State var address: String = ""
-    @State var medcondition: String = ""
-    @State var patientdescription: String = ""
-    @State var symptoms: String = ""
-    @State var medication: String = ""
-    @State var notes: String = ""
+    var fullname: String = ""
+    var dob: String = ""
+    var address: String = ""
+    var medcondition: String = ""
+    var patientdescription: String = ""
+    var symptoms: String = ""
+    var medication: String = ""
+    var notes: String = ""
     
     
     
@@ -26,14 +26,14 @@ struct DoctorUpdateView: View {
         NavigationView {
             List{
                 Section{
-                    TextField("Patient Fullname", text: $fullname)
-                    TextField("Date Of Birth (DD/MM/YYYY)", text: $dob)
-                    TextField("Address", text: $address)
-                    TextField("Medical Condition", text: $medcondition)
-                    TextField("Condition Description", text: $patientdescription)
-                    TextField("Symptoms", text: $symptoms)
-                    TextField("Medication", text: $medication)
-                    TextField("Doctor Notes", text: $notes)
+                    TextField("Patient Fullname", text: $patient.fullname)
+                    TextField("Date Of Birth (DD/MM/YYYY)", text: $patient.dob)
+                    TextField("Address", text: $patient.address)
+                    TextField("Medical Condition", text: $patient.medcondition)
+                    TextField("Condition Description", text: $patient.patientdescription)
+                    TextField("Symptoms", text: $patient.symptoms)
+                    TextField("Medication", text: $patient.medication)
+                    TextField("Doctor Notes", text: $patient.notes)
                 }
             }.listStyle(GroupedListStyle())
                 .navigationTitle(Text("Update"))
@@ -44,15 +44,15 @@ struct DoctorUpdateView: View {
     }
     
     func putPatients() {
-        guard let url = URL(string: "http://10.212.65.133:8000/patients/\(self.patient.id)") else {
+        guard let url = URL(string: "http://10.212.78.114:8000/patients/\(self.patient.id)") else {
             print("The API is down/not connected")
             fatalError("endpoint not active")
             
         }
         
-        let patientData = PatientElement(id: 0, fullname: self.fullname, dob: self.dob, address: self.address, medcondition: self.medcondition,
-                                  patientdescription: self.patientdescription, symptoms: self.symptoms, medication: self.medication, notes: self.notes)
-        
+//        let patientData = Patient(id: 0, fullname: self.fullname, dob: self.dob, address: self.address, medcondition: self.medcondition,
+//                                  patientdescription: self.patientdescription, symptoms: self.symptoms, medication: self.medication, notes: self.notes)
+        let patientData = self.patient
         guard let encoded = try? JSONEncoder().encode(patientData) else {
             print("JSON failed to encode")
             return
@@ -71,7 +71,7 @@ struct DoctorUpdateView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 if let response = try?
-                    JSONDecoder().decode(PatientElement.self, from: data) {
+                    JSONDecoder().decode(Patient.self, from: data) {
                     DispatchQueue.main.async {
                         //self.patients = response
                         presentationMode.wrappedValue.dismiss()
