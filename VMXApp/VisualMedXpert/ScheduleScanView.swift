@@ -94,6 +94,7 @@ struct ScanAddView : View {
     @State var date: String = ""
     @State var time: String = ""
     
+    var genders = ["Male", "Female", "Prefer to not say"]
     var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
     var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
     var availabletimes = ["13:00", "14:30", "16:00", "16:45", "17:00"]
@@ -104,18 +105,32 @@ struct ScanAddView : View {
             List{
                 Section{
                     TextField("Full name", text: $name)
-                    TextField("Gender", text: $gender)
+                    Picker("Gender", selection: $gender) {
+                        Text("").tag("") // Add empty tag to avoid selection issues
+                        ForEach(genders, id: \.self) {
+                            Text($0)
+                        }
+                    }
                     TextField("Condition", text: $condition)
                     Picker("Type of Scan", selection: $scanType) {
-                        Text("").tag("") // Add empty tag to avoid selection issues 
+                        Text("").tag("")
                         ForEach(scantypes, id:\.self) {
                             Text($0)
                         }
                     }
-                    
-                    TextField("Centre", text: $centre)
-                    TextField("Date", text: $date)
-                    TextField("Time", text: $time)
+                    Picker("Centre", selection: $centre) {
+                        Text("").tag("")
+                        ForEach(centres, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    TextField("Date (DD/MM/YYYY)", text: $date)
+                    Picker("Time", selection: $time) {
+                        Text("").tag("")
+                        ForEach(availabletimes, id: \.self) {
+                            Text($0)
+                        }
+                    }
                 }
             }
             .listStyle(GroupedListStyle())

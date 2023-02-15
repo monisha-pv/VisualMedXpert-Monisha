@@ -18,7 +18,11 @@ struct ScheduleScanUpdateView: View {
      var centre: String = ""
      var date: String = ""
      var time: String = ""
-
+    
+    var genders = ["Male", "Female", "Prefer not to say"]
+    var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
+    var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
+    var availabletimes = ["13:00", "14:30", "16:00", "16:45", "17:00"]
 
     
     var body: some View {
@@ -26,12 +30,33 @@ struct ScheduleScanUpdateView: View {
             List{
                 Section{
                     TextField("Full name", text: $scan.name)
-                    TextField("Gender", text: $scan.gender)
+                    Picker("Gender", selection: $scan.gender) {
+                        Text("").tag("") // Add empty tag to avoid selection issues
+                        ForEach(genders, id: \.self) {
+                            Text($0)
+                        }
+                    }
                     TextField("Condition", text: $scan.condition)
-                    TextField("Type of Scan", text: $scan.scanType)
-                    TextField("Centre", text: $scan.centre)
+                    Picker("Type of Scan", selection: $scan.scanType) {
+                        Text("").tag("")
+                        ForEach(scantypes, id: \.self) {
+                            Text($0)
+                        }
+                        
+                    }
+                    Picker("Centre", selection: $scan.centre) {
+                        Text("").tag("")
+                        ForEach(centres, id: \.self) {
+                            Text($0)
+                        }
+                    }
                     TextField("Date", text: $scan.date)
-                    TextField("Time", text: $scan.time)
+                    Picker("Time", selection: $scan.time) {
+                        Text("").tag("")
+                        ForEach(centres, id: \.self) {
+                            Text($0)
+                        }
+                    }
                 }
             }.listStyle(GroupedListStyle())
                 .navigationTitle(Text("Update"))
