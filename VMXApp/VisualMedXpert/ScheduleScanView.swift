@@ -19,19 +19,19 @@ struct ScheduleScanView: View {
                     HStack {
                         NavigationLink (
                             destination: ScheduleScanDetailView(scan: scan)) {
-                            Image(systemName: "person.fill").foregroundColor(.blue)
+                            Image(systemName: "heart.text.square.fill").foregroundColor(.blue)
                             Text(scan.name)
                             Spacer()
                             Text(scan.date)
                             Spacer()
-                            Text(scan.time)
+                            Text("\(scan.time)")
 
                         }
                     }
                 }
                    
             }.onAppear(perform: getScheduleScan)
-                .navigationBarTitle("Scan Details")
+                .navigationBarTitle("Your Bookings")
                 .navigationBarItems(trailing: Button(action: {showAdd.toggle()}, label: {
                     Image(systemName: "plus.circle")
                 }))
@@ -94,6 +94,7 @@ struct ScanAddView : View {
     @State var date: String = ""
     @State var time: String = ""
     
+    var scantypes = ["Xray", "CT Scan"]
     
     
     var body: some View {
@@ -103,7 +104,13 @@ struct ScanAddView : View {
                     TextField("Full name", text: $name)
                     TextField("Gender", text: $gender)
                     TextField("Condition", text: $condition)
-                    TextField("Type of Scan", text: $scanType)
+//                    TextField("Type of Scan", text: $scanType)
+                    Picker("Type of Scan", selection: $scanType) {
+                        ForEach(scantypes, id:\.self) {
+                            Text($0)
+                        }
+                    }
+                    
                     TextField("Centre", text: $centre)
                     TextField("Date", text: $date)
                     TextField("Time", text: $time)
