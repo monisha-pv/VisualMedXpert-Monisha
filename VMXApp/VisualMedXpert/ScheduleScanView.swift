@@ -94,7 +94,9 @@ struct ScanAddView : View {
     @State var date: String = ""
     @State var time: String = ""
     
-    var scantypes = ["Xray", "CT Scan"]
+    var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
+    var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
+    var availabletimes = ["13:00", "14:30", "16:00", "16:45", "17:00"]
     
     
     var body: some View {
@@ -104,8 +106,8 @@ struct ScanAddView : View {
                     TextField("Full name", text: $name)
                     TextField("Gender", text: $gender)
                     TextField("Condition", text: $condition)
-//                    TextField("Type of Scan", text: $scanType)
                     Picker("Type of Scan", selection: $scanType) {
+                        Text("").tag("") // Add empty tag to avoid selection issues 
                         ForEach(scantypes, id:\.self) {
                             Text($0)
                         }
