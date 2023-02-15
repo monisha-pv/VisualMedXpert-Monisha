@@ -6,3 +6,4 @@ class scheduleScanSerializer(serializers.ModelSerializer):
         model = scheduleScan
         fields = ['id', 'name', 'gender', 'condition', 'scanType', 'centre', 'date', 'time']
 
+
