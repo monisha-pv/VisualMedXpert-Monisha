@@ -14,6 +14,11 @@
 		E3721D52299A91D800088BDF /* ScheduleScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3721D51299A91D800088BDF /* ScheduleScanModel.swift */; };
 		E3721D54299A9E2200088BDF /* ScheduleScanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3721D53299A9E2200088BDF /* ScheduleScanDetailView.swift */; };
 		E3721D56299AA59A00088BDF /* ScheduleScanUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3721D55299AA59A00088BDF /* ScheduleScanUpdateView.swift */; };
+		E3721D58299ED30600088BDF /* femaleSkeleton.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3721D57299ED30600088BDF /* femaleSkeleton.usdz */; };
+		E3721D5A299ED60B00088BDF /* humanHead.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3721D59299ED60B00088BDF /* humanHead.usdz */; };
+		E3721D5C299ED80D00088BDF /* maleSkeleton.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3721D5B299ED80D00088BDF /* maleSkeleton.usdz */; };
+		E3721D5E299EDBAE00088BDF /* humanHeart.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3721D5D299EDBAE00088BDF /* humanHeart.usdz */; };
+		E3721D60299EF30000088BDF /* headStudy.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3721D5F299EF2FF00088BDF /* headStudy.usdz */; };
 		E37A27692996ECDF00934B83 /* XrayImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A27682996ECDF00934B83 /* XrayImageClassification.swift */; };
 		E37A276B2996EF2A00934B83 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A276A2996EF2A00934B83 /* ImagePicker.swift */; };
 		E37A276D2996F02200934B83 /* UIImageAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A276C2996F02200934B83 /* UIImageAddition.swift */; };
@@ -65,6 +70,11 @@
 		E3721D51299A91D800088BDF /* ScheduleScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanModel.swift; sourceTree = "<group>"; };
 		E3721D53299A9E2200088BDF /* ScheduleScanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanDetailView.swift; sourceTree = "<group>"; };
 		E3721D55299AA59A00088BDF /* ScheduleScanUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanUpdateView.swift; sourceTree = "<group>"; };
+		E3721D57299ED30600088BDF /* femaleSkeleton.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = femaleSkeleton.usdz; path = ../../../../Downloads/femaleSkeleton.usdz; sourceTree = "<group>"; };
+		E3721D59299ED60B00088BDF /* humanHead.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = humanHead.usdz; path = ../../../../Downloads/humanHead.usdz; sourceTree = "<group>"; };
+		E3721D5B299ED80D00088BDF /* maleSkeleton.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = maleSkeleton.usdz; path = ../../../../Downloads/maleSkeleton.usdz; sourceTree = "<group>"; };
+		E3721D5D299EDBAE00088BDF /* humanHeart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = humanHeart.usdz; path = ../../../../Downloads/humanHeart.usdz; sourceTree = "<group>"; };
+		E3721D5F299EF2FF00088BDF /* headStudy.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = headStudy.usdz; path = ../../../../Downloads/headStudy.usdz; sourceTree = "<group>"; };
 		E37A27682996ECDF00934B83 /* XrayImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XrayImageClassification.swift; sourceTree = "<group>"; };
 		E37A276A2996EF2A00934B83 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E37A276C2996F02200934B83 /* UIImageAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageAddition.swift; sourceTree = "<group>"; };
@@ -126,6 +136,11 @@
 		E367579529427B6900DBFE29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E3721D57299ED30600088BDF /* femaleSkeleton.usdz */,
+				E3721D5B299ED80D00088BDF /* maleSkeleton.usdz */,
+				E3721D5F299EF2FF00088BDF /* headStudy.usdz */,
+				E3721D5D299EDBAE00088BDF /* humanHeart.usdz */,
+				E3721D59299ED60B00088BDF /* humanHead.usdz */,
 				E36757A229429BBF00DBFE29 /* Human_skull.usdz */,
 				E36757A329429BC000DBFE29 /* Lungs.usdz */,
 			);
@@ -325,10 +340,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3721D5E299EDBAE00088BDF /* humanHeart.usdz in Resources */,
 				E38601D52944125700F414B7 /* Assets.xcassets in Resources */,
 				E36757A729429BC000DBFE29 /* Lungs.usdz in Resources */,
 				E36757A629429BC000DBFE29 /* Human_skull.usdz in Resources */,
+				E3721D58299ED30600088BDF /* femaleSkeleton.usdz in Resources */,
+				E3721D60299EF30000088BDF /* headStudy.usdz in Resources */,
 				E3B6A24E291F4EEC008904BD /* GoogleService-Info.plist in Resources */,
+				E3721D5A299ED60B00088BDF /* humanHead.usdz in Resources */,
+				E3721D5C299ED80D00088BDF /* maleSkeleton.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

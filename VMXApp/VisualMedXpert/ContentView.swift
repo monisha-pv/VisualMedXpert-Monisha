@@ -16,7 +16,8 @@ struct ContentView: View {
     @State private var selectedModel: String?
     @State private var modelConfirmedForPlacement: String?
     
-    var models: [String] = ["Human_skull", "Lungs"]
+    var models: [String] = ["Human_skull", "Lungs", "femaleSkeleton", "humanHead", "maleSkeleton", "humanHeart", "headStudy"]
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
