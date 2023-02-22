@@ -83,6 +83,7 @@ struct ScheduleScanView: View {
 struct ScanAddView : View {
     @Environment(\.presentationMode) var presentationMode
     @State var showAlert : Bool = false
+    @State private var enableNotificaition = false
     
     var function: () -> Void
     
@@ -132,17 +133,25 @@ struct ScanAddView : View {
                         }
                     }
                 }
+                Toggle("Notify Me", isOn: $enableNotificaition)
+                    .onChange(of: enableNotificaition) { value in
+                        notifyPatient()
+                        print("Notification sent")
+                }
             }
+        
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Book Scan")
             .navigationBarItems(leading: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             },
-                trailing: Button(action: {postScheduleScan()}, label: {
+                                trailing: Button(action: {postScheduleScan()}, label: {
                 Text("Book")
+                
             }))
         }
     }
+
 
     
     func postScheduleScan() {
@@ -188,6 +197,27 @@ struct ScanAddView : View {
         }.resume()
     }
 }
+
+func notifyPatient() {
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {
+        success, error in
+        if success {
+            print("All set!")
+        } else if let error = error {
+            print(error.localizedDescription)
+            
+        }
+    }
+    let content = UNMutableNotificationContent()
+    content.title = "VisualMedXpert"
+    content.subtitle = "Thank you, your scan has been scheduled!"
+    content.sound = UNNotificationSound.default
+    
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+    UNUserNotificationCenter.current().add(request)
+}
+
 
 
 struct ScheduleScanView_Previews: PreviewProvider {
