@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var selectedModel: String?
     @State private var modelConfirmedForPlacement: String?
     
-    var models: [String] = ["Human_skull", "Lungs", "femaleSkeleton", "humanHead", "maleSkeleton", "humanHeart", "headStudy"]
+    var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain"]
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -42,8 +42,10 @@ struct ARViewContainer: UIViewRepresentable {
             
             let fileName = modelName + ".usdz"
             
+            
             let modelEntity = try! ModelEntity.loadModel(named: fileName)
-            let anchorEntity = AnchorEntity(plane: .any)
+            //            let anchorEntity = AnchorEntity(plane: .horizontal)
+            let anchorEntity = AnchorEntity(world: SIMD3(x: 0, y: 0, z: 0))
             anchorEntity.addChild(modelEntity)
             
             uiView.scene.addAnchor(anchorEntity)
@@ -52,11 +54,12 @@ struct ARViewContainer: UIViewRepresentable {
             
             //install gestures for movement
             uiView.installGestures([.translation, .rotation, .scale], for: modelEntity)
-        
+            
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
             }
         }
+        
     }
     
     // AR objects placement
@@ -77,8 +80,6 @@ struct ARViewContainer: UIViewRepresentable {
         return arView
     }
 }
-
-
 
     struct ModelPickerView: View {
         @Binding var isPlacementEnabled: Bool
