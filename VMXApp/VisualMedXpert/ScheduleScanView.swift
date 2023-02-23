@@ -136,7 +136,7 @@ struct ScanAddView : View {
                 Toggle("Notify Me", isOn: $enableNotificaition)
                     .onChange(of: enableNotificaition) { value in
                         notifyPatient()
-                        print("Notification sent")
+                        print("Notification is sending")
                 }
             }
         
@@ -213,7 +213,7 @@ func notifyPatient() {
     content.subtitle = "Thank you, your scan has been scheduled!"
     content.sound = UNNotificationSound.default
     
-    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
     let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
     UNUserNotificationCenter.current().add(request)
 }

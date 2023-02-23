@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 
 struct LoginView: View {
+   // @State var scans = [Scan]()
     enum Field {
         case email, password
     }

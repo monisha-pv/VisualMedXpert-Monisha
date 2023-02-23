@@ -53,7 +53,7 @@ struct ScheduleScanUpdateView: View {
                     TextField("Date", text: $scan.date)
                     Picker("Time", selection: $scan.time) {
                         Text("").tag("")
-                        ForEach(centres, id: \.self) {
+                        ForEach(availabletimes, id: \.self) {
                             Text($0)
                         }
                     }
