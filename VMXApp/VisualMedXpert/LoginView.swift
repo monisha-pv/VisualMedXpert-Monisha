@@ -76,6 +76,12 @@ struct LoginView: View {
                 } label: {
                     Text("Log In")
                 }
+                
+                NavigationLink(destination: PatientLoginView()) {
+                    Text("Patient Login")
+                }
+                
+                
                 //.padding(.leading)
             }
             //.disabled(buttonsDisabled)

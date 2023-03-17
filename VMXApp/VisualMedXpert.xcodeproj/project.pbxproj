@@ -43,6 +43,10 @@
 		E3B6A25D292044AB008904BD /* DoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A25C292044AB008904BD /* DoctorView.swift */; };
 		E3B6A25F292044B8008904BD /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A25E292044B8008904BD /* PatientView.swift */; };
 		E3B6A26129204917008904BD /* PatientAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A26029204917008904BD /* PatientAPITypes.swift */; };
+		E3BCC89A29C287F4006594F4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E3BCC89929C287F4006594F4 /* FirebaseStorage */; };
+		E3BCC89C29C28804006594F4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3BCC89B29C28804006594F4 /* FirebaseFirestoreSwift */; };
+		E3BCC8A629C3D428006594F4 /* PatientLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */; };
+		E3BCC8A829C3D736006594F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCC8A729C3D736006594F4 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,8 @@
 		E3B6A25E292044B8008904BD /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
 		E3B6A26029204917008904BD /* PatientAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAPITypes.swift; sourceTree = "<group>"; };
 		E3B6A2622920550E008904BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLoginView.swift; sourceTree = "<group>"; };
+		E3BCC8A729C3D736006594F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +115,10 @@
 				E36757922942536300DBFE29 /* FocusEntity in Frameworks */,
 				E3B6A255291F4F4A008904BD /* FirebaseDatabase in Frameworks */,
 				E3B6A257291F4F4A008904BD /* FirebaseFirestore in Frameworks */,
+				E3BCC89C29C28804006594F4 /* FirebaseFirestoreSwift in Frameworks */,
 				E38601DA29442AC900F414B7 /* SmartHitTest in Frameworks */,
 				E3B6A253291F4F4A008904BD /* FirebaseAuth in Frameworks */,
+				E3BCC89A29C287F4006594F4 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +159,7 @@
 				E3B6A233291F4E4E008904BD /* VisualMedXpertTests */,
 				E3B6A23D291F4E4E008904BD /* VisualMedXpertUITests */,
 				E3B6A221291F4E4B008904BD /* Products */,
+				E3BCC89829C287F4006594F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +180,8 @@
 				E3B6A2622920550E008904BD /* Info.plist */,
 				E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */,
 				E3B6A225291F4E4B008904BD /* LoginView.swift */,
+				E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */,
+				E3BCC8A729C3D736006594F4 /* User.swift */,
 				E3B6A258291F5B88008904BD /* ChooseOptionView.swift */,
 				E3B6A25C292044AB008904BD /* DoctorView.swift */,
 				E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */,
@@ -221,6 +232,13 @@
 			path = VisualMedXpertUITests;
 			sourceTree = "<group>";
 		};
+		E3BCC89829C287F4006594F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +261,8 @@
 				E3B6A256291F4F4A008904BD /* FirebaseFirestore */,
 				E36757912942536300DBFE29 /* FocusEntity */,
 				E38601D929442AC900F414B7 /* SmartHitTest */,
+				E3BCC89929C287F4006594F4 /* FirebaseStorage */,
+				E3BCC89B29C28804006594F4 /* FirebaseFirestoreSwift */,
 			);
 			productName = VisualMedXpert;
 			productReference = E3B6A220291F4E4B008904BD /* VisualMedXpert.app */;
@@ -388,7 +408,9 @@
 				E3721D52299A91D800088BDF /* ScheduleScanModel.swift in Sources */,
 				E3721D54299A9E2200088BDF /* ScheduleScanDetailView.swift in Sources */,
 				E3721D50299A8C5B00088BDF /* ScheduleScanView.swift in Sources */,
+				E3BCC8A629C3D428006594F4 /* PatientLoginView.swift in Sources */,
 				E37A27692996ECDF00934B83 /* XrayImageClassification.swift in Sources */,
+				E3BCC8A829C3D736006594F4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +790,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		E3BCC89929C287F4006594F4 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		E3BCC89B29C28804006594F4 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
