@@ -2,6 +2,7 @@ from django.db import models
 
 class scheduleScan(models.Model):
     name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200, default='')
     gender = models.CharField(max_length=50)
     condition = models.CharField(max_length=200)
     scanType = models.CharField(max_length=100)

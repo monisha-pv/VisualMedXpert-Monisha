@@ -7,18 +7,18 @@ from rest_framework import status
 
 @api_view(['GET', 'POST'])
 def scan_list(request, format=None):
-
     if request.method == 'GET':
         scans = scheduleScan.objects.all()
         serializer = scheduleScanSerializer(scans, many=True)
-        #return JsonResponse({'scans': serializer.data})
         return Response(serializer.data)
 
     if request.method == 'POST':
-        serializer = scheduleScanSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            serializer = scheduleScanSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def scan_detail(request, id, format=None):
@@ -42,3 +42,5 @@ def scan_detail(request, id, format=None):
     elif request.method == 'DELETE':
         scan.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+

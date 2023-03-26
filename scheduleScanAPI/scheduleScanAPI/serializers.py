@@ -4,6 +4,6 @@ from .models import scheduleScan
 class scheduleScanSerializer(serializers.ModelSerializer):
     class Meta:
         model = scheduleScan
-        fields = ['id', 'name', 'gender', 'condition', 'scanType', 'centre', 'date', 'time']
+        fields = ['id', 'name', 'email', 'gender', 'condition', 'scanType', 'centre', 'date', 'time']
 
 
