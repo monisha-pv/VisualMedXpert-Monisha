@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ScheduleScanView: View {
     @State var scans = [Scan]()
     @State var showAdd = false
-
+    
     
     var body: some View {
         NavigationView {
@@ -19,17 +20,17 @@ struct ScheduleScanView: View {
                     HStack {
                         NavigationLink (
                             destination: ScheduleScanDetailView(scan: scan)) {
-                            Image(systemName: "heart.text.square.fill").foregroundColor(.blue)
-                            Text(scan.name)
-                            Spacer()
-                            Text(scan.date)
-                            Spacer()
-                            Text("\(scan.time)")
-
-                        }
+                                Image(systemName: "heart.text.square.fill").foregroundColor(.blue)
+                                Text(scan.name)
+                                Spacer()
+                                Text(scan.date)
+                                Spacer()
+                                Text("\(scan.time)")
+                                
+                            }
                     }
                 }
-                   
+                
             }.onAppear(perform: getScheduleScan)
                 .navigationBarTitle("Your Bookings")
                 .navigationBarItems(trailing: Button(action: {showAdd.toggle()}, label: {
@@ -38,18 +39,16 @@ struct ScheduleScanView: View {
                 .listStyle(PlainListStyle())
                 .sheet(isPresented: $showAdd, content: {
                     ScanAddView(function: self.getScheduleScan)
-            })
+                })
         }
     }
     
-
+    
     
     func getScheduleScan() {
         guard let url = URL(string: "http://10.212.78.114:8000/scans/") else {
             print("The API is down/not connected")
             return
-            
-            
         }
         
         // Authenticate API
@@ -63,22 +62,22 @@ struct ScheduleScanView: View {
         let authData = (username + ":" + password).data(using: .utf8)!.base64EncodedString()
         request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
         
-        
-        URLSession.shared.dataTask(with: request) { data, response,
-            error in
+        // using users email fetch and display their booking 
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let response = try?
-                    JSONDecoder().decode([Scan].self, from: data) {
-                    DispatchQueue.main.async {
-                        self.scans = response
+                if let response = try? JSONDecoder().decode([Scan].self, from: data) {
+                    if let email = Auth.auth().currentUser?.email {
+                        let showPatientDetails = response.filter { $0.email == email }
+                        DispatchQueue.main.async {
+                            self.scans = showPatientDetails
+                        }
                     }
-                    
                 }
             }
-            
         }.resume()
     }
 }
+
 
 struct ScanAddView : View {
     @Environment(\.presentationMode) var presentationMode
@@ -88,6 +87,7 @@ struct ScanAddView : View {
     var function: () -> Void
     
     @State var name: String = ""
+    @State var email: String = ""
     @State var gender: String = ""
     @State var condition: String = ""
     @State var scanType: String = ""
@@ -106,6 +106,7 @@ struct ScanAddView : View {
             List{
                 Section{
                     TextField("Full name", text: $name)
+                    TextField("Email", text: $email)
                     Picker("Gender", selection: $gender) {
                         Text("").tag("") // Add empty tag to avoid selection issues
                         ForEach(genders, id: \.self) {
@@ -137,22 +138,22 @@ struct ScanAddView : View {
                     .onChange(of: enableNotificaition) { value in
                         notifyPatient()
                         print("Notification is sending")
-                }
+                    }
             }
-        
+            
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Book Scan")
             .navigationBarItems(leading: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             },
-                                trailing: Button(action: {postScheduleScan()}, label: {
+                trailing: Button(action: {postScheduleScan()}, label: {
                 Text("Book")
                 
             }))
         }
     }
-
-
+    
+    
     
     func postScheduleScan() {
         guard let url = URL(string: "http://10.212.78.114:8000/scans/") else {
@@ -160,8 +161,8 @@ struct ScanAddView : View {
             return
         }
         
-        let scanData = Scan(id: 0, name: self.name, gender: self.gender, condition: self.condition, scanType: self.scanType,
-                                  centre: self.centre, date: self.date, time: self.time)
+        let scanData = Scan(id: 0, name: self.name, email: self.email, gender: self.gender, condition: self.condition, scanType: self.scanType,
+                            centre: self.centre, date: self.date, time: self.time)
         
         guard let encoded = try? JSONEncoder().encode(scanData) else {
             print("JSON failed to encode")
@@ -177,7 +178,20 @@ struct ScanAddView : View {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let authData = (username + ":" + password).data(using: .utf8)!.base64EncodedString()
         request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
-        request.httpBody = encoded
+        
+        // logged-in user's email
+        if let email = Auth.auth().currentUser?.email {
+            let jsonData = try! JSONSerialization.jsonObject(with: encoded, options: []) as! [String: Any]
+            let jsonWithUserEmail = jsonData.merging(["email": email], uniquingKeysWith: { (current, _) in current })
+            let encodedWithUserEmail = try! JSONSerialization.data(withJSONObject: jsonWithUserEmail, options: [])
+            request.httpBody = encodedWithUserEmail
+            let jsonString = String(data: encodedWithUserEmail, encoding: .utf8)!
+            print("JSON data with user email: \(jsonString)")
+        } else {
+            print("No user is logged in")
+            return
+        }
+
         
         
         URLSession.shared.dataTask(with: request) { data, response,
@@ -186,7 +200,6 @@ struct ScanAddView : View {
                 if let response = try?
                     JSONDecoder().decode(Scan.self, from: data) {
                     DispatchQueue.main.async {
-                        //self.patients = response
                         self.function()
                         presentationMode.wrappedValue.dismiss()
                     }

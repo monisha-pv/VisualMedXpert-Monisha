@@ -11,6 +11,7 @@ struct Scan: Codable, Hashable, Identifiable {
     
     var id: Int
     var name: String
+    var email: String
     var gender: String
     var condition: String
     var scanType: String
@@ -18,7 +19,3 @@ struct Scan: Codable, Hashable, Identifiable {
     var date: String
     var time: String
 }
-
-
-
-

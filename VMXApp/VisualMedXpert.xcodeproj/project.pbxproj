@@ -47,6 +47,7 @@
 		E3BCC89C29C28804006594F4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3BCC89B29C28804006594F4 /* FirebaseFirestoreSwift */; };
 		E3BCC8A629C3D428006594F4 /* PatientLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */; };
 		E3BCC8A829C3D736006594F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCC8A729C3D736006594F4 /* User.swift */; };
+		E3DC878C29CFAAE5006BC434 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC878B29CFAAE5006BC434 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		E3B6A2622920550E008904BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLoginView.swift; sourceTree = "<group>"; };
 		E3BCC8A729C3D736006594F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E3DC878B29CFAAE5006BC434 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				E367579529427B6900DBFE29 /* Models */,
 				E3B6A2622920550E008904BD /* Info.plist */,
 				E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */,
+				E3DC878B29CFAAE5006BC434 /* RegistrationView.swift */,
 				E3B6A225291F4E4B008904BD /* LoginView.swift */,
 				E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */,
 				E3BCC8A729C3D736006594F4 /* User.swift */,
@@ -391,6 +394,7 @@
 			files = (
 				E37A276B2996EF2A00934B83 /* ImagePicker.swift in Sources */,
 				E37A276F2996F0B200934B83 /* CovidClassifier 1.mlmodel in Sources */,
+				E3DC878C29CFAAE5006BC434 /* RegistrationView.swift in Sources */,
 				E3B6A25F292044B8008904BD /* PatientView.swift in Sources */,
 				E3721D56299AA59A00088BDF /* ScheduleScanUpdateView.swift in Sources */,
 				E3B6A26129204917008904BD /* PatientAPITypes.swift in Sources */,

@@ -84,6 +84,6 @@ struct ScheduleScanDetailView: View {
 
 struct ScheduleScanDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleScanDetailView(scan: Scan(id: 0, name: "Monisha V", gender: "Female", condition: "Lung Cancer", scanType: "CT Scan", centre: "Derriford Hospital", date: "20/02/2023", time: "13:45"))
+        ScheduleScanDetailView(scan: Scan(id: 0, name: "Monisha V", email: "monishapv@hotmail.com", gender: "Female", condition: "Lung Cancer", scanType: "CT Scan", centre: "Derriford Hospital", date: "20/02/2023", time: "13:45"))
     }
 }
