@@ -122,6 +122,7 @@ struct UserDetailView: View {
     
     var body: some View {
         VStack {
+            
             if let displayName = userModel.displayName {
                 Text("Welcome, \(displayName)!")
                     .font(.headline)
@@ -135,14 +136,27 @@ struct UserDetailView: View {
             if let email = userModel.email {
                 Text("Email: \(email)")
             }
+            
             Spacer()
-            NavigationLink(destination: PatientView().navigationBarBackButtonHidden(true)) {
-                Text("Test")
+            
+            NavigationLink(destination: ScheduleScanView().navigationBarBackButtonHidden(false)) {
+                Text("Book a scan appointment")
                     .padding()
                     .background(.black)
                     .foregroundColor(.white)
                     .cornerRadius(15)
             }
+            
+            Spacer().frame(height: 40)
+            NavigationLink(destination: PatientChatBot().navigationBarBackButtonHidden(false)) {
+                Text("VMX ChatBot")
+                    .padding()
+                    .background(.black)
+                    .foregroundColor(.white)
+                    .cornerRadius(15)
+            }
+            
+            Spacer()
         }
         .navigationBarTitle("", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
@@ -163,6 +177,7 @@ struct UserDetailView: View {
         }
     }
 }
+
 
 
 

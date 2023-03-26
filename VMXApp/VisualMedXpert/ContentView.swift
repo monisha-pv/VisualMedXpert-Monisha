@@ -44,7 +44,7 @@ struct ARViewContainer: UIViewRepresentable {
             
             
             let modelEntity = try! ModelEntity.loadModel(named: fileName)
-            //            let anchorEntity = AnchorEntity(plane: .horizontal)
+            // let anchorEntity = AnchorEntity(plane: .horizontal)
             let anchorEntity = AnchorEntity(world: SIMD3(x: 0, y: 0, z: 0))
             anchorEntity.addChild(modelEntity)
             
@@ -166,6 +166,7 @@ struct PlacementButtonsView: View {
         self.selectedModel = nil
     }
 }
+
 
 
 #if DEBUG
