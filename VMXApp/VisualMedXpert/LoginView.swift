@@ -9,155 +9,116 @@ import SwiftUI
 import Firebase
 
 struct LoginView: View {
-   // @State var scans = [Scan]()
-    enum Field {
-        case email, password
-    }
-    
     @State private var email = ""
     @State private var password = ""
-    @State private var showingAlert = false
-    @State private var alertMessage = ""
-    @State private var buttonsDisabled = true
-    @State private var path = NavigationPath()
-    @FocusState private var focusField: Field?
-    
+    @State private var isDisabled = true
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationStack (path: $path) {
-            Image("VMXIcon")
-                .resizable()
-                .scaledToFit()
-                .padding()
-            
-            Group {
-                TextField("Email", text: $email)
-                    .keyboardType(.emailAddress)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
-                    .submitLabel(.next)
-                    .focused($focusField, equals: .email)
-                    .onSubmit {
-                        focusField = .password
-                    }
-                    .onChange(of: email) { _ in
-                        enableButtons()
-                    }
+        NavigationView {
+            VStack {
+                Image("VMXIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
                 
-                SecureField("Password", text: $password)
-                    .textInputAutocapitalization(.never)
-                    .submitLabel(.done)
-                    .focused($focusField, equals: .password)
-                    .onSubmit {
-                        focusField = nil //dismiss the keyboard
-                    }
-                    .onChange(of: password) { _ in
-                        enableButtons()
-                    }
-            }
-            .textFieldStyle(.roundedBorder)
-            .overlay {
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(.gray.opacity(0.5), lineWidth: 2)
-            }
-            .padding(.horizontal)
-            
-            HStack {
-                Button {
-                    register()
-                    
-                } label: {
-                    Text("Sign Up")
-                }
-                //.padding(.trailing)
-                
-                Button {
-                    login()
-                } label: {
-                    Text("Log In")
+                HStack {
+                    Text("  Email:")
+                    Spacer()
+                    TextField("", text: $email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                        .textContentType(.emailAddress)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: email) { _ in
+                            enableButton()
+                        }
                 }
                 
-                NavigationLink(destination: PatientLoginView()) {
+                HStack {
+                    Text("  Password:")
+                    Spacer()
+                    SecureField("", text: $password)
+                        .autocapitalization(.none)
+                        .textContentType(.password)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: password) { _ in
+                            enableButton()
+                        }
+                }
+                
+                Button(action: login) {
+                    Text("Login")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.black)
+                        .cornerRadius(5.0)
+                }
+                .padding(.horizontal)
+                .disabled(isDisabled)
+                
+                NavigationLink(destination: RegistrationView().navigationBarBackButtonHidden(true).navigationBarHidden(true)) {
+                    Text("Don't have an account? Register")
+                }
+                
+                Spacer()
+                
+                NavigationLink(destination: PatientLoginView().navigationBarBackButtonHidden(true).navigationBarHidden(true)) {
                     Text("Patient Login")
                 }
-                
-                
-                //.padding(.leading)
             }
-            //.disabled(buttonsDisabled)
-            .buttonStyle(.borderedProminent)
-            .tint(Color(.black))
-            .font(.title2)
-            .padding(.top)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: String.self) { view in
-                if view == "ChooseOptionView" {
-                    ChooseOptionView()
-                } else {
-                    if view == "PatientView" {
-                        PatientView()
-                    }
-                }
-            }
-        }
-        .alert(alertMessage, isPresented: $showingAlert) {
-            Button("OK", role: .cancel) {}
-        }
-        
-        .onAppear {
-            // if logged in navigate to the new screen and skip login screen
-            if Auth.auth().currentUser != nil {
-                print("Login success")
-                path.append("ChooseOptionView")
-            }
+            .navigationBarTitle("Doctor Login")
+            .navigationBarBackButtonHidden(true)
+            
         }
     }
     
-        
-        func enableButtons() {
-            let emailOK = email.count > 6 && email.contains("@")
-            let passwordOK = password.count > 6
-            buttonsDisabled = !(emailOK && passwordOK)
+    private func enableButton() {
+        let emailIsValid = email.isValidEmailLogin
+        let passwordIsValid = password.count >= 6
+        isDisabled = !(emailIsValid && passwordIsValid)
+    }
+    
+    private func login() {
+        guard email.isValidEmailLogin else {
+            return
         }
         
-        func register() {
-            Auth.auth().createUser(withEmail: email, password: password) { result, error
-                in
-                if let error = error {
-                    print("SIGNIN ERROR: \(error.localizedDescription)")
-                    alertMessage = "SIGNIN ERROR: \(error.localizedDescription)"
-                    showingAlert = true
-                } else {
-                    print("Registration success")
-                    alertMessage = "Successfully registered!"
-                    //path.append("ChooseOptionView")
-                }
-            }
+        guard password.count >= 6 else {
+            return
         }
         
-        func login() {
-            Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                if let error = error {
-                    print("LOGIN ERROR: \(error.localizedDescription)")
-                    alertMessage = "LOGIN ERROR: \(error.localizedDescription)"
-                    showingAlert = true
-                } else if email.contains("@patientvmx") {
-                    print("Patient login success")
-                    path.append("PatientView")
-                }
-                else {
-                    if email.contains("@") {
-                        print("Doctor login success")
-                        path.append("ChooseOptionView")
-
-                    }
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                email = ""
+                password = ""
+                DispatchQueue.main.async {
+                    presentationMode.wrappedValue.dismiss()
                 }
             }
         }
     }
+}
+
+extension String {
+    var isValidEmailLogin: Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: self)
+    }
+}
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }
 }
+
+
