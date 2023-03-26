@@ -18,6 +18,10 @@ struct PatientLoginView: View {
     var body: some View {
         NavigationView {
             VStack {
+//                Text("Patient Log In")
+//                    .font(.title)
+//                    .padding(.top, 15)
+                
                 Image("VMXIcon")
                     .resizable()
                     .scaledToFit()
@@ -61,15 +65,15 @@ struct PatientLoginView: View {
                         }
                     }
                 }) {
-                    Text("Log In")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.black)
-                        .cornerRadius(5.0)
-                }
-                .padding(.horizontal)
+//                    Text("Log In")
+//                        .font(.headline)
+//                        .foregroundColor(.white)
+//                        .padding()
+//                        .frame(maxWidth: .infinity)
+//                        .background(Color.black)
+//                        .cornerRadius(5.0)
+//                }
+//                .padding(.horizontal)
                 
                 NavigationLink(
                     destination: UserDetailView(userModel: userAuth.userModel ?? User(uid: nil, email: nil, displayName: nil))
@@ -79,14 +83,27 @@ struct PatientLoginView: View {
                     EmptyView()
                 }
                 .hidden()
+                    
+                    Text("Log In")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.black)
+                            .cornerRadius(5.0)
+                    }
+                    .padding(.horizontal)
+
+                    Spacer()
+
+                    NavigationLink(destination: RegistrationView().navigationBarBackButtonHidden(true)) {
+                        Text("Don't have an account? Register")
+                    }
+                    .padding(.horizontal)
                 
             }
             .navigationBarTitle("Patient Login")
-            .navigationBarItems(trailing:
-                NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true).navigationBarHidden(true)) {
-                    Text("Doctor Login")
-                }
-            )
+            .navigationBarHidden(true)
         }
     }
     
@@ -96,6 +113,7 @@ struct PatientLoginView: View {
         isDisabled = !(emailIsValid && passwordIsValid)
     }
 }
+
 
 struct UserDetailView: View {
     var userModel: User
@@ -118,7 +136,7 @@ struct UserDetailView: View {
                 Text("Email: \(email)")
             }
             Spacer()
-            NavigationLink(destination: PatientView()) {
+            NavigationLink(destination: PatientView().navigationBarBackButtonHidden(true)) {
                 Text("Test")
                     .padding()
                     .background(.black)
@@ -127,21 +145,28 @@ struct UserDetailView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-        .navigationBarItems(trailing:
-            Button(action: {
-                do {
-                    try Auth.auth().signOut()
-                    userAuth.userModel = nil
-                    presentationMode.wrappedValue.dismiss()
-                } catch let signOutError as NSError {
-                    print("Error signing out: %@", signOutError)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    do {
+                        try Auth.auth().signOut()
+                        userAuth.userModel = nil
+                        presentationMode.wrappedValue.dismiss()
+                    } catch let signOutError as NSError {
+                        print("Error signing out: %@", signOutError)
+                    }
+                }) {
+                    Text("Sign Out")
                 }
-            }) {
-                Text("Sign Out")
             }
-        )
+        }
     }
 }
+
+
+
+
 
 class UserAuth: ObservableObject {
     @Published var userModel: User?
@@ -165,6 +190,7 @@ struct PatientDetailView: View {
                     }
             }
             .navigationBarTitle("", displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
         }
         .environmentObject(userAuth) // Add this line

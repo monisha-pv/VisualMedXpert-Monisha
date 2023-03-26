@@ -40,25 +40,26 @@ struct ChooseOptionView: View {
                         .cornerRadius(15)
                 }
             }
-        }
-
-        .navigationBarTitle("Choose An Option")
-        .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button("Sign Out") {
-                    do {
-                        try Auth.auth().signOut()
-                        print("Doctor log out successful!")
-                        dismiss()
-                    } catch {
-                        print("ERROR: Doctor could not sign out!")
+            .navigationBarTitle("Choose An Option", displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Sign Out") {
+                        do {
+                            try Auth.auth().signOut()
+                            print("Doctor log out successful!")
+                            dismiss()
+                        } catch {
+                            print("ERROR: Doctor could not sign out!")
+                        }
                     }
                 }
             }
         }
+        .navigationBarHidden(true)
     }
 }
+
 
 
 
