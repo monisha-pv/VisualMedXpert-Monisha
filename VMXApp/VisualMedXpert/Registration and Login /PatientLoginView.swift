@@ -18,10 +18,6 @@ struct PatientLoginView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                Text("Patient Log In")
-//                    .font(.title)
-//                    .padding(.top, 15)
-                
                 Image("VMXIcon")
                     .resizable()
                     .scaledToFit()
@@ -65,16 +61,7 @@ struct PatientLoginView: View {
                         }
                     }
                 }) {
-//                    Text("Log In")
-//                        .font(.headline)
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .frame(maxWidth: .infinity)
-//                        .background(Color.black)
-//                        .cornerRadius(5.0)
-//                }
-//                .padding(.horizontal)
-                
+                    
                 NavigationLink(
                     destination: UserDetailView(userModel: userAuth.userModel ?? User(uid: nil, email: nil, displayName: nil))
                         .environmentObject(userAuth),
@@ -148,7 +135,7 @@ struct UserDetailView: View {
             }
             
             Spacer().frame(height: 40)
-            NavigationLink(destination: PatientChatBot().navigationBarBackButtonHidden(false)) {
+            NavigationLink(destination: SwiftUI_Chatbot().navigationBarBackButtonHidden(false)) {
                 Text("VMX ChatBot")
                     .padding()
                     .background(.black)
@@ -208,7 +195,7 @@ struct PatientDetailView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
         }
-        .environmentObject(userAuth) // Add this line
+        .environmentObject(userAuth)
     }
 }
 

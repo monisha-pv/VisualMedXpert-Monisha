@@ -39,6 +39,15 @@ struct ChooseOptionView: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                 }
+                
+                Spacer().frame(height: 50)
+                NavigationLink(destination: ViewPatientBookings()) {
+                    Text("View Patient Bookings")
+                        .padding()
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                }
             }
             .navigationBarTitle("Choose An Option", displayMode: .inline)
             .navigationBarBackButtonHidden(true)
