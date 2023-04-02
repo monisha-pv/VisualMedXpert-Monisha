@@ -59,7 +59,7 @@ struct PatientBookingUpdateView: View {
                     }
                 }
             }.listStyle(GroupedListStyle())
-                .navigationTitle(Text("Update"))
+                .navigationTitle(Text("Update Booking"))
                 .navigationBarItems(leading: Button("Cancel") {
                     presentationMode.wrappedValue.dismiss()
                 }, trailing: Button(action: {updatePatientBooking()}, label: {Text("Save")}))
