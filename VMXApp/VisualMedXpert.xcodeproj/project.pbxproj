@@ -31,6 +31,10 @@
 		E3A4395429D86BF400A3F63B /* CreatePatientStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395329D86BF400A3F63B /* CreatePatientStruct.swift */; };
 		E3A4395829D86D3800A3F63B /* VMXChatbotStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395729D86D3800A3F63B /* VMXChatbotStruct.swift */; };
 		E3A4395A29D86D5600A3F63B /* SwiftUI Chatbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395929D86D5600A3F63B /* SwiftUI Chatbot.swift */; };
+		E3A4395C29D9CA0D00A3F63B /* human_body.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4395B29D9CA0D00A3F63B /* human_body.usdz */; };
+		E3A4395E29D9CA1300A3F63B /* human_kidney.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4395D29D9CA1300A3F63B /* human_kidney.usdz */; };
+		E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */; };
+		E3A4396429D9CA2500A3F63B /* human_skull.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4396329D9CA2500A3F63B /* human_skull.usdz */; };
 		E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */; };
 		E3A8CEEC29D8571D008D47AA /* PatientBookingUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */; };
 		E3A8CEEE29D85A31008D47AA /* PatientBookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */; };
@@ -91,6 +95,10 @@
 		E3A4395329D86BF400A3F63B /* CreatePatientStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePatientStruct.swift; sourceTree = "<group>"; };
 		E3A4395729D86D3800A3F63B /* VMXChatbotStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMXChatbotStruct.swift; sourceTree = "<group>"; };
 		E3A4395929D86D5600A3F63B /* SwiftUI Chatbot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI Chatbot.swift"; sourceTree = "<group>"; };
+		E3A4395B29D9CA0D00A3F63B /* human_body.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_body.usdz; path = ../../../../Downloads/human_body.usdz; sourceTree = "<group>"; };
+		E3A4395D29D9CA1300A3F63B /* human_kidney.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_kidney.usdz; path = ../../../../Downloads/human_kidney.usdz; sourceTree = "<group>"; };
+		E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_eye1.usdz; path = ../../../../Downloads/human_eye1.usdz; sourceTree = "<group>"; };
+		E3A4396329D9CA2500A3F63B /* human_skull.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_skull.usdz; path = ../../../../Downloads/human_skull.usdz; sourceTree = "<group>"; };
 		E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPatientBookings.swift; sourceTree = "<group>"; };
 		E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingUpdateView.swift; sourceTree = "<group>"; };
 		E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingDetailView.swift; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 				E3721D5D299EDBAE00088BDF /* humanHeart.usdz */,
 				E3721D63299F230700088BDF /* humanLungs.usdz */,
 				E3721D65299F28A600088BDF /* humanBrain.usdz */,
+				E3A4395B29D9CA0D00A3F63B /* human_body.usdz */,
+				E3A4395D29D9CA1300A3F63B /* human_kidney.usdz */,
+				E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */,
+				E3A4396329D9CA2500A3F63B /* human_skull.usdz */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,8 +440,12 @@
 				E38601D52944125700F414B7 /* Assets.xcassets in Resources */,
 				E3721D58299ED30600088BDF /* femaleSkeleton.usdz in Resources */,
 				E3721D60299EF30000088BDF /* headStudy.usdz in Resources */,
+				E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */,
 				E3B6A24E291F4EEC008904BD /* GoogleService-Info.plist in Resources */,
+				E3A4395E29D9CA1300A3F63B /* human_kidney.usdz in Resources */,
+				E3A4395C29D9CA0D00A3F63B /* human_body.usdz in Resources */,
 				E3721D5C299ED80D00088BDF /* maleSkeleton.usdz in Resources */,
+				E3A4396429D9CA2500A3F63B /* human_skull.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

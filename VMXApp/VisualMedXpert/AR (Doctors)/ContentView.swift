@@ -12,11 +12,11 @@ import FocusEntity
 import SmartHitTest
 
 struct ContentView: View {
-    @State private var isPlacementEnabled = false //swiftui to auto update interface as the variable changes
+    @State private var isPlacementEnabled = false
     @State private var selectedModel: String?
     @State private var modelConfirmedForPlacement: String?
     
-    var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain"]
+    var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull"]
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -34,52 +34,60 @@ struct ContentView: View {
 struct ARViewContainer: UIViewRepresentable {
     @Binding var modelConfirmedForPlacement: String?
     
-    // Update AR placement (adding interaction)
+    func makeUIView(context: Context) -> ARView {
+        let arView = ARView(frame: .zero)
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [.horizontal, .vertical]
+        config.environmentTexturing = .automatic
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+            config.sceneReconstruction = .mesh
+        }
+        arView.session.run(config)
+        return arView
+    }
+    
     func updateUIView(_ uiView: ARView, context: Context) {
+        let focusSquare = FocusEntity(on: uiView, focus: .classic)
+        if let cameraTransform = uiView.session.currentFrame?.camera.transform {
+            let cameraPosition = SIMD3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
+            focusSquare.position = cameraPosition
+        }
+        
         if let modelName = self.modelConfirmedForPlacement {
-            
             print("DEBUG: adding model with scene - \(modelName)")
-            
             let fileName = modelName + ".usdz"
-            
-            
             let modelEntity = try! ModelEntity.loadModel(named: fileName)
-            // let anchorEntity = AnchorEntity(plane: .horizontal)
-            let anchorEntity = AnchorEntity(world: SIMD3(x: 0, y: 0, z: 0))
+            
+            // Center the modelEntity
+            let bounds = modelEntity.visualBounds(relativeTo: modelEntity)
+            let center = bounds.center
+            modelEntity.position -= center
+            
+            // Remove all existing anchors before adding the new one
+            uiView.scene.anchors.removeAll()
+
+            let anchorEntity = AnchorEntity(plane: .horizontal)
             anchorEntity.addChild(modelEntity)
-            
             uiView.scene.addAnchor(anchorEntity)
-            
             modelEntity.generateCollisionShapes(recursive: true)
-            
-            //install gestures for movement
-            uiView.installGestures([.translation, .rotation, .scale], for: modelEntity)
+
+            // Set the scale of the modelEntity
+            let scaleFactor: Float = 0.4
+            modelEntity.scale = SIMD3<Float>(repeating: scaleFactor)
+
+            // Add a delay before installing gestures
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                uiView.installGestures([.translation, .rotation, .scale], for: modelEntity)
+            }
             
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
             }
         }
-        
-    }
-    
-    // AR objects placement
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.horizontal, .vertical]
-        config.environmentTexturing = .automatic
-        
-        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-            config.sceneReconstruction = .mesh
-        }
-        
-        arView.session.run(config)
-        
-        return arView
     }
 }
+
+
 
     struct ModelPickerView: View {
         @Binding var isPlacementEnabled: Bool
@@ -176,3 +184,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 #endif
+
