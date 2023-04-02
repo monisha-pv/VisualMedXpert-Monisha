@@ -4,6 +4,7 @@
 //
 //  Created by Monisha Vadivelu on 12/11/2022.
 //
+// Doctor login page
 
 import SwiftUI
 import Firebase
@@ -12,10 +13,11 @@ import Firebase
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var accessCode = ""
     @State private var isDisabled = true
     @Environment(\.presentationMode) var presentationMode
-    @State private var isAuthenticated = false // track if user is authenticated
-    @State private var showAlert = false // track if alert should be shown
+    @State private var isAuthenticated = false // is user is authenticated
+    @State private var showAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     
@@ -51,6 +53,18 @@ struct LoginView: View {
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .onChange(of: password) { _ in
+                            enableButton()
+                        }
+                }
+                
+                HStack {
+                    Text("  Access Code:")
+                    Spacer()
+                    TextField("", text: $accessCode)
+                        .keyboardType(.numberPad)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: accessCode) { _ in
                             enableButton()
                         }
                 }
@@ -94,7 +108,8 @@ struct LoginView: View {
     private func enableButton() {
         let emailIsValid = email.isValidEmailLogin
         let passwordIsValid = password.count >= 6
-        isDisabled = !(emailIsValid && passwordIsValid)
+        let accessCodeIsValid = accessCode == "261031"
+        isDisabled = !(emailIsValid && passwordIsValid && accessCodeIsValid)
     }
     
     private func login() {
@@ -107,6 +122,13 @@ struct LoginView: View {
             showAlert(title: "Invalid password", message: "Password must be at least 6 characters long.")
             return
         }
+        
+        if accessCode != "261031" {
+            showAlert(title: "Invalid access code", message: "Please enter the correct access code.")
+            return
+    
+        }
+        
         
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
@@ -130,6 +152,8 @@ struct LoginView: View {
             }
         }
     }
+
+
 
 
 
