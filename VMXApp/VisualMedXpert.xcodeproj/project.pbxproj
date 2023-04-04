@@ -35,6 +35,7 @@
 		E3A4395E29D9CA1300A3F63B /* human_kidney.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4395D29D9CA1300A3F63B /* human_kidney.usdz */; };
 		E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */; };
 		E3A4396429D9CA2500A3F63B /* human_skull.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4396329D9CA2500A3F63B /* human_skull.usdz */; };
+		E3A4396C29DC643A00A3F63B /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E3A4396B29DC643A00A3F63B /* SwiftUICharts */; };
 		E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */; };
 		E3A8CEEC29D8571D008D47AA /* PatientBookingUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */; };
 		E3A8CEEE29D85A31008D47AA /* PatientBookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */; };
@@ -131,6 +132,7 @@
 				E3B6A257291F4F4A008904BD /* FirebaseFirestore in Frameworks */,
 				E3BCC89C29C28804006594F4 /* FirebaseFirestoreSwift in Frameworks */,
 				E38601DA29442AC900F414B7 /* SmartHitTest in Frameworks */,
+				E3A4396C29DC643A00A3F63B /* SwiftUICharts in Frameworks */,
 				E3B6A253291F4F4A008904BD /* FirebaseAuth in Frameworks */,
 				E3BCC89A29C287F4006594F4 /* FirebaseStorage in Frameworks */,
 			);
@@ -340,6 +342,7 @@
 				E38601D929442AC900F414B7 /* SmartHitTest */,
 				E3BCC89929C287F4006594F4 /* FirebaseStorage */,
 				E3BCC89B29C28804006594F4 /* FirebaseFirestoreSwift */,
+				E3A4396B29DC643A00A3F63B /* SwiftUICharts */,
 			);
 			productName = VisualMedXpert;
 			productReference = E3B6A220291F4E4B008904BD /* VisualMedXpert.app */;
@@ -417,6 +420,8 @@
 				E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E36757902942536300DBFE29 /* XCRemoteSwiftPackageReference "FocusEntity" */,
 				E38601D829442AC900F414B7 /* XCRemoteSwiftPackageReference "ARKit-SmartHitTest" */,
+				E3A4396529DC3B3100A3F63B /* XCRemoteSwiftPackageReference "ChartView" */,
+				E3A4396829DC438A00A3F63B /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = E3B6A221291F4E4B008904BD /* Products */;
 			projectDirPath = "";
@@ -839,6 +844,22 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		E3A4396529DC3B3100A3F63B /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		E3A4396829DC438A00A3F63B /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -859,6 +880,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E38601D829442AC900F414B7 /* XCRemoteSwiftPackageReference "ARKit-SmartHitTest" */;
 			productName = SmartHitTest;
+		};
+		E3A4396B29DC643A00A3F63B /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3A4396529DC3B3100A3F63B /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		E3B6A252291F4F4A008904BD /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

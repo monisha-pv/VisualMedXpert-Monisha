@@ -12,12 +12,11 @@ struct XrayImageClassification: View {
     
     let model = CovidClassifier_1()
     
-    @State private var classificationLabel: String = ""
+    @State private var displayResult: String = ""
     @State private var isShowPhotoLibrary = false
     @State private var image = UIImage()
-    
-    //    let photos = ["covid", "normal", "images"]
-    //    @State private var currentIndex: Int = 0
+    @State private var covidProgress: Double = 0.0
+    @State private var normalProgress: Double = 0.0
     
     var body: some View {
         VStack {
@@ -36,26 +35,44 @@ struct XrayImageClassification: View {
                         .font(.headline)
                 }
             }
-            // button to classify the image using the model
+            
             Button("Classify") {
-                // Add more code here
                 classifyImage()
             }
             .padding()
-            .foregroundColor(Color.white)
-            .background(Color.green)
+            .foregroundColor(.white)
+            .background(RoundedRectangle(cornerRadius: 10).fill(Color.black))
             
-            // textview to display the results of the classification
-            Text(classificationLabel)
+            // progress bars for Covid and Normal classifications
+            VStack {
+                HStack {
+                    Text("Covid")
+                    ProgressView(value: covidProgress, total: 1.0, label: {
+                        Text(String(format: "%.2f", covidProgress * 100) + "%")
+                    })
+                    .accentColor(.red)
+                }
                 .padding()
-                .font(.body)
+                HStack {
+                    Text("Normal")
+                    ProgressView(value: normalProgress, total: 1.0, label: {
+                        Text(String(format: "%.2f", normalProgress * 100) + "%")
+                    })
+                    .accentColor(.green)
+                }
+                .padding()
+            }
             Spacer()
+//            Text(displayResult)
+//                .padding()
+//                .font(.body)
+//
+//            Spacer()
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
         }
     }
-    
     
     private func classifyImage() {
         let currentImageName = image
@@ -69,20 +86,32 @@ struct XrayImageClassification: View {
         
         let output = try? model.prediction(image: buffer)
         
-            if let output = output {
-                let results = output.classLabelProbs.sorted { $0.1 > $1.1 }
-                let result = results.map { (key, value) in
-                    return "\(key) = \(String(format: "%.2f", value * 100))%"
-                }.joined(separator: "\n")
-                
-                self.classificationLabel = result
+        if let output = output {
+            let results = output.classLabelProbs.sorted { $0.1 > $1.1 }
+            let result = results.map { (key, value) in
+                return "\(key) = \(String(format: "%.2f", value * 100))%"
+            }.joined(separator: "\n")
+            
+            //self.displayResult = result
+            
+            if let covid = output.classLabelProbs["Covid"] {
+                self.covidProgress = covid
+            }
+            if let normal = output.classLabelProbs["Normal"] {
+                self.normalProgress = normal
+            }
         }
     }
 }
-
 
 struct XrayImageClassification_Previews: PreviewProvider {
     static var previews: some View {
         XrayImageClassification()
     }
 }
+
+
+
+
+
+
