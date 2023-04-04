@@ -53,11 +53,6 @@ struct RegistrationView: View {
                             }
                     }
                     
-//                    Button("Register", action: register)
-//                        .disabled(isDisabled)
-//                        .padding()
-//                        .buttonStyle(.bordered)
-//
                     Button(action: register) {
                         Text("Sign Up")
                             .font(.headline)
