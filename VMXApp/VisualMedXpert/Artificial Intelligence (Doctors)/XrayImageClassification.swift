@@ -4,19 +4,22 @@
 //
 //  Created by Monisha Vadivelu on 10/02/2023.
 //
+// need to fix the classifier and add the viral pneumonia 
 
 import SwiftUI
 import CoreML
 
 struct XrayImageClassification: View {
     
-    let model = CovidClassifier_1()
+    let model = COVIDImageClassifier_1()
     
     @State private var displayResult: String = ""
     @State private var isShowPhotoLibrary = false
     @State private var image = UIImage()
     @State private var covidProgress: Double = 0.0
     @State private var normalProgress: Double = 0.0
+    @State private var pneumoniaProgress: Double = 0.0
+    
     
     var body: some View {
         VStack {
@@ -61,13 +64,21 @@ struct XrayImageClassification: View {
                     .accentColor(.green)
                 }
                 .padding()
+                HStack {
+                    Text("Viral Pneumonia")
+                    ProgressView(value: pneumoniaProgress, total: 1.0, label: {
+                        Text(String(format: "%.2f", pneumoniaProgress * 100) + "%")
+                    })
+                    .accentColor(.orange)
+                }
+                .padding()
             }
             Spacer()
-//            Text(displayResult)
-//                .padding()
-//                .font(.body)
-//
-//            Spacer()
+             Text(displayResult)
+                .padding()
+                .font(.body)
+
+            Spacer()
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
@@ -92,13 +103,16 @@ struct XrayImageClassification: View {
                 return "\(key) = \(String(format: "%.2f", value * 100))%"
             }.joined(separator: "\n")
             
-            //self.displayResult = result
+            self.displayResult = result
             
             if let covid = output.classLabelProbs["Covid"] {
                 self.covidProgress = covid
             }
             if let normal = output.classLabelProbs["Normal"] {
                 self.normalProgress = normal
+            }
+            if let pneumonia = output.classLabelProbs["Viral Pneumonia"] {
+                self.pneumoniaProgress = pneumonia
             }
         }
     }

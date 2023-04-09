@@ -36,6 +36,7 @@
 		E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */; };
 		E3A4396429D9CA2500A3F63B /* human_skull.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4396329D9CA2500A3F63B /* human_skull.usdz */; };
 		E3A4396C29DC643A00A3F63B /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E3A4396B29DC643A00A3F63B /* SwiftUICharts */; };
+		E3A4397029E310C100A3F63B /* COVIDImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */; };
 		E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */; };
 		E3A8CEEC29D8571D008D47AA /* PatientBookingUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */; };
 		E3A8CEEE29D85A31008D47AA /* PatientBookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */; };
@@ -100,6 +101,7 @@
 		E3A4395D29D9CA1300A3F63B /* human_kidney.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_kidney.usdz; path = ../../../../Downloads/human_kidney.usdz; sourceTree = "<group>"; };
 		E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_eye1.usdz; path = ../../../../Downloads/human_eye1.usdz; sourceTree = "<group>"; };
 		E3A4396329D9CA2500A3F63B /* human_skull.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_skull.usdz; path = ../../../../Downloads/human_skull.usdz; sourceTree = "<group>"; };
+		E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "COVIDImageClassifier 1.mlmodel"; path = "../../../../Desktop/COVIDImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPatientBookings.swift; sourceTree = "<group>"; };
 		E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingUpdateView.swift; sourceTree = "<group>"; };
 		E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingDetailView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E37A276E2996F0B200934B83 /* CovidClassifier 1.mlmodel */,
+				E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */,
 				E37A276A2996EF2A00934B83 /* ImagePicker.swift */,
 				E37A276C2996F02200934B83 /* UIImageAddition.swift */,
 				E3862FD429971BC90053634E /* DirectImageClassification.swift */,
@@ -475,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3A4397029E310C100A3F63B /* COVIDImageClassifier 1.mlmodel in Sources */,
 				E3A4395429D86BF400A3F63B /* CreatePatientStruct.swift in Sources */,
 				E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */,
 				E37A276B2996EF2A00934B83 /* ImagePicker.swift in Sources */,
