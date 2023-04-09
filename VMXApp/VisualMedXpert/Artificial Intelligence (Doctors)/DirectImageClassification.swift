@@ -14,7 +14,14 @@ struct DirectImageClassification: View {
         NavigationView {
             VStack{
                 NavigationLink(destination: XrayImageClassification()) {
-                    Text("Image Classification")
+                    Text("Covid, Viral Pneumonia or Normal")
+                        .padding()
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                }
+                NavigationLink(destination: COVID19_Positive_Negative()) {
+                    Text("Are you Covid Postive?")
                         .padding()
                         .background(.black)
                         .foregroundColor(.white)
@@ -23,7 +30,7 @@ struct DirectImageClassification: View {
             }
         }
         
-        .navigationBarTitle("Image Classifier")
+        .navigationBarTitle("Image Classification")
         
     }
 }
