@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DirectImageClassification: View {
-    @Environment(\.dismiss) private var dismiss
+   // @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
@@ -20,6 +20,7 @@ struct DirectImageClassification: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                 }
+                Spacer().frame(height: 50)
                 NavigationLink(destination: COVID19_Positive_Negative()) {
                     Text("Are you Covid Postive?")
                         .padding()
@@ -31,7 +32,7 @@ struct DirectImageClassification: View {
         }
         
         .navigationBarTitle("Image Classification")
-        
+        .navigationBarBackButtonHidden(false)
     }
 }
 

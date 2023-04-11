@@ -21,7 +21,8 @@
 		E37A27692996ECDF00934B83 /* XrayImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A27682996ECDF00934B83 /* XrayImageClassification.swift */; };
 		E37A276B2996EF2A00934B83 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A276A2996EF2A00934B83 /* ImagePicker.swift */; };
 		E37A276D2996F02200934B83 /* UIImageAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A276C2996F02200934B83 /* UIImageAddition.swift */; };
-		E37A276F2996F0B200934B83 /* CovidClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E37A276E2996F0B200934B83 /* CovidClassifier 1.mlmodel */; };
+		E37E691329E51F5200CCCF50 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37E691229E51F5200CCCF50 /* NotificationService.swift */; };
+		E37E691729E51F5200CCCF50 /* VMXNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E37E691029E51F5100CCCF50 /* VMXNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E380CDAC29208F3400B9B891 /* DoctorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */; };
 		E380CDAE2920A09900B9B891 /* DoctorUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */; };
 		E38601D42944084C00F414B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38601D32944084C00F414B7 /* ContentView.swift */; };
@@ -39,6 +40,10 @@
 		E3A4397029E310C100A3F63B /* COVIDImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */; };
 		E3A4397229E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3A4397129E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel */; };
 		E3A4397429E319E700A3F63B /* COVID19_Positive_Negative.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4397329E319E700A3F63B /* COVID19_Positive_Negative.swift */; };
+		E3A4397829E5005800A3F63B /* human_stomach.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4397729E5005800A3F63B /* human_stomach.usdz */; };
+		E3A4397A29E5064700A3F63B /* human_pelvis.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4397929E5064600A3F63B /* human_pelvis.usdz */; };
+		E3A4397C29E5066800A3F63B /* human_teeth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4397B29E5066700A3F63B /* human_teeth.usdz */; };
+		E3A4397E29E5066D00A3F63B /* female_torso.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4397D29E5066D00A3F63B /* female_torso.usdz */; };
 		E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */; };
 		E3A8CEEC29D8571D008D47AA /* PatientBookingUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */; };
 		E3A8CEEE29D85A31008D47AA /* PatientBookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */; };
@@ -61,6 +66,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E37E691529E51F5200CCCF50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3B6A218291F4E4B008904BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E37E690F29E51F5100CCCF50;
+			remoteInfo = VMXNotificationServiceExtension;
+		};
 		E3B6A231291F4E4E008904BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E3B6A218291F4E4B008904BD /* Project object */;
@@ -77,6 +89,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E37E691B29E51F5200CCCF50 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E37E691729E51F5200CCCF50 /* VMXNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E3721D4F299A8C5B00088BDF /* ScheduleScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanView.swift; sourceTree = "<group>"; };
 		E3721D51299A91D800088BDF /* ScheduleScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanModel.swift; sourceTree = "<group>"; };
@@ -91,7 +117,9 @@
 		E37A27682996ECDF00934B83 /* XrayImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XrayImageClassification.swift; sourceTree = "<group>"; };
 		E37A276A2996EF2A00934B83 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E37A276C2996F02200934B83 /* UIImageAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageAddition.swift; sourceTree = "<group>"; };
-		E37A276E2996F0B200934B83 /* CovidClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "CovidClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		E37E691029E51F5100CCCF50 /* VMXNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VMXNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E37E691229E51F5200CCCF50 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		E37E691429E51F5200CCCF50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailView.swift; sourceTree = "<group>"; };
 		E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorUpdateView.swift; sourceTree = "<group>"; };
 		E38601D32944084C00F414B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +134,10 @@
 		E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "COVIDImageClassifier 1.mlmodel"; path = "../../../../Desktop/COVIDImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		E3A4397129E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "COVID19PosNegClassifier 1.mlmodel"; path = "../../../../Desktop/COVID19PosNegClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		E3A4397329E319E700A3F63B /* COVID19_Positive_Negative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID19_Positive_Negative.swift; sourceTree = "<group>"; };
+		E3A4397729E5005800A3F63B /* human_stomach.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_stomach.usdz; path = ../../../../Desktop/human_stomach.usdz; sourceTree = "<group>"; };
+		E3A4397929E5064600A3F63B /* human_pelvis.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_pelvis.usdz; path = ../../../../Downloads/human_pelvis.usdz; sourceTree = "<group>"; };
+		E3A4397B29E5066700A3F63B /* human_teeth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_teeth.usdz; path = ../../../../Downloads/human_teeth.usdz; sourceTree = "<group>"; };
+		E3A4397D29E5066D00A3F63B /* female_torso.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = female_torso.usdz; path = ../../../../Downloads/female_torso.usdz; sourceTree = "<group>"; };
 		E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPatientBookings.swift; sourceTree = "<group>"; };
 		E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingUpdateView.swift; sourceTree = "<group>"; };
 		E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingDetailView.swift; sourceTree = "<group>"; };
@@ -129,6 +161,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E37E690D29E51F5100CCCF50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3B6A21D291F4E4B008904BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,8 +213,21 @@
 				E3A4395D29D9CA1300A3F63B /* human_kidney.usdz */,
 				E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */,
 				E3A4396329D9CA2500A3F63B /* human_skull.usdz */,
+				E3A4397729E5005800A3F63B /* human_stomach.usdz */,
+				E3A4397929E5064600A3F63B /* human_pelvis.usdz */,
+				E3A4397B29E5066700A3F63B /* human_teeth.usdz */,
+				E3A4397D29E5066D00A3F63B /* female_torso.usdz */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E37E691129E51F5200CCCF50 /* VMXNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E37E691229E51F5200CCCF50 /* NotificationService.swift */,
+				E37E691429E51F5200CCCF50 /* Info.plist */,
+			);
+			path = VMXNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		E3A4394F29D86A0F00A3F63B /* AR (Doctors) */ = {
@@ -189,7 +241,6 @@
 		E3A4395029D86A5100A3F63B /* Artificial Intelligence (Doctors) */ = {
 			isa = PBXGroup;
 			children = (
-				E37A276E2996F0B200934B83 /* CovidClassifier 1.mlmodel */,
 				E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */,
 				E3A4397129E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel */,
 				E37A276A2996EF2A00934B83 /* ImagePicker.swift */,
@@ -260,6 +311,7 @@
 				E3B6A222291F4E4B008904BD /* VisualMedXpert */,
 				E3B6A233291F4E4E008904BD /* VisualMedXpertTests */,
 				E3B6A23D291F4E4E008904BD /* VisualMedXpertUITests */,
+				E37E691129E51F5200CCCF50 /* VMXNotificationServiceExtension */,
 				E3B6A221291F4E4B008904BD /* Products */,
 				E3BCC89829C287F4006594F4 /* Frameworks */,
 			);
@@ -271,6 +323,7 @@
 				E3B6A220291F4E4B008904BD /* VisualMedXpert.app */,
 				E3B6A230291F4E4E008904BD /* VisualMedXpertTests.xctest */,
 				E3B6A23A291F4E4E008904BD /* VisualMedXpertUITests.xctest */,
+				E37E691029E51F5100CCCF50 /* VMXNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,6 +383,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E37E690F29E51F5100CCCF50 /* VMXNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E37E691829E51F5200CCCF50 /* Build configuration list for PBXNativeTarget "VMXNotificationServiceExtension" */;
+			buildPhases = (
+				E37E690C29E51F5100CCCF50 /* Sources */,
+				E37E690D29E51F5100CCCF50 /* Frameworks */,
+				E37E690E29E51F5100CCCF50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VMXNotificationServiceExtension;
+			productName = VMXNotificationServiceExtension;
+			productReference = E37E691029E51F5100CCCF50 /* VMXNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E3B6A21F291F4E4B008904BD /* VisualMedXpert */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3B6A244291F4E4E008904BD /* Build configuration list for PBXNativeTarget "VisualMedXpert" */;
@@ -337,10 +407,12 @@
 				E3B6A21C291F4E4B008904BD /* Sources */,
 				E3B6A21D291F4E4B008904BD /* Frameworks */,
 				E3B6A21E291F4E4B008904BD /* Resources */,
+				E37E691B29E51F5200CCCF50 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E37E691629E51F5200CCCF50 /* PBXTargetDependency */,
 			);
 			name = VisualMedXpert;
 			packageProductDependencies = (
@@ -400,9 +472,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					E37E690F29E51F5100CCCF50 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					E3B6A21F291F4E4B008904BD = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -439,25 +514,37 @@
 				E3B6A21F291F4E4B008904BD /* VisualMedXpert */,
 				E3B6A22F291F4E4E008904BD /* VisualMedXpertTests */,
 				E3B6A239291F4E4E008904BD /* VisualMedXpertUITests */,
+				E37E690F29E51F5100CCCF50 /* VMXNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E37E690E29E51F5100CCCF50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3B6A21E291F4E4B008904BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E3721D66299F28A600088BDF /* humanBrain.usdz in Resources */,
+				E3A4397829E5005800A3F63B /* human_stomach.usdz in Resources */,
 				E3721D5E299EDBAE00088BDF /* humanHeart.usdz in Resources */,
 				E3721D64299F230700088BDF /* humanLungs.usdz in Resources */,
 				E38601D52944125700F414B7 /* Assets.xcassets in Resources */,
+				E3A4397E29E5066D00A3F63B /* female_torso.usdz in Resources */,
 				E3721D58299ED30600088BDF /* femaleSkeleton.usdz in Resources */,
 				E3721D60299EF30000088BDF /* headStudy.usdz in Resources */,
 				E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */,
+				E3A4397A29E5064700A3F63B /* human_pelvis.usdz in Resources */,
 				E3B6A24E291F4EEC008904BD /* GoogleService-Info.plist in Resources */,
 				E3A4395E29D9CA1300A3F63B /* human_kidney.usdz in Resources */,
 				E3A4395C29D9CA0D00A3F63B /* human_body.usdz in Resources */,
+				E3A4397C29E5066800A3F63B /* human_teeth.usdz in Resources */,
 				E3721D5C299ED80D00088BDF /* maleSkeleton.usdz in Resources */,
 				E3A4396429D9CA2500A3F63B /* human_skull.usdz in Resources */,
 			);
@@ -480,6 +567,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E37E690C29E51F5100CCCF50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E37E691329E51F5200CCCF50 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3B6A21C291F4E4B008904BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,7 +583,6 @@
 				E3A4395429D86BF400A3F63B /* CreatePatientStruct.swift in Sources */,
 				E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */,
 				E37A276B2996EF2A00934B83 /* ImagePicker.swift in Sources */,
-				E37A276F2996F0B200934B83 /* CovidClassifier 1.mlmodel in Sources */,
 				E3A4397429E319E700A3F63B /* COVID19_Positive_Negative.swift in Sources */,
 				E3DC878C29CFAAE5006BC434 /* RegistrationView.swift in Sources */,
 				E3721D56299AA59A00088BDF /* ScheduleScanUpdateView.swift in Sources */,
@@ -535,6 +629,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E37E691629E51F5200CCCF50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E37E690F29E51F5100CCCF50 /* VMXNotificationServiceExtension */;
+			targetProxy = E37E691529E51F5200CCCF50 /* PBXContainerItemProxy */;
+		};
 		E3B6A232291F4E4E008904BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E3B6A21F291F4E4B008904BD /* VisualMedXpert */;
@@ -548,6 +647,58 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E37E691929E51F5200CCCF50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CFT49HLDMK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VMXNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VMXNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fyp.VisualMedXpert.VMXNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E37E691A29E51F5200CCCF50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CFT49HLDMK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VMXNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VMXNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fyp.VisualMedXpert.VMXNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E3B6A242291F4E4E008904BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -665,6 +816,7 @@
 		E3B6A245291F4E4E008904BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -695,6 +847,7 @@
 		E3B6A246291F4E4E008904BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -801,6 +954,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E37E691829E51F5200CCCF50 /* Build configuration list for PBXNativeTarget "VMXNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E37E691929E51F5200CCCF50 /* Debug */,
+				E37E691A29E51F5200CCCF50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E3B6A21B291F4E4B008904BD /* Build configuration list for PBXProject "VisualMedXpert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

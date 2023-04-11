@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Firebase
+import UserNotifications
+
 
 struct ScheduleScanView: View {
     @State var scans = [Scan]()
@@ -134,11 +136,10 @@ struct ScanAddView : View {
                         }
                     }
                 }
-                Toggle("Notify Me", isOn: $enableNotificaition)
-                    .onChange(of: enableNotificaition) { value in
-                        notifyPatient()
-                        print("Notification is sending")
-                    }
+                Toggle("Enable notification for booking confirmations", isOn: $enableNotificaition)
+                        .onChange(of: enableNotificaition) { value in
+                        print("Notification setting changed to \(value)")
+                }
             }
             
             .listStyle(GroupedListStyle())
@@ -202,6 +203,7 @@ struct ScanAddView : View {
                     DispatchQueue.main.async {
                         self.function()
                         presentationMode.wrappedValue.dismiss()
+                        notifyPatient(name: self.name)
                     }
                     return
                 }
@@ -211,25 +213,27 @@ struct ScanAddView : View {
     }
 }
 
-func notifyPatient() {
+func notifyPatient(name: String) {
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {
         success, error in
         if success {
             print("All set!")
         } else if let error = error {
             print(error.localizedDescription)
-            
         }
     }
+    
     let content = UNMutableNotificationContent()
     content.title = "VisualMedXpert"
-    content.subtitle = "Thank you, your scan has been scheduled!"
+    content.subtitle = "Thank you, \(name), your scan has been scheduled!"
     content.sound = UNNotificationSound.default
     
-    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
     let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
     UNUserNotificationCenter.current().add(request)
 }
+
+
 
 
 

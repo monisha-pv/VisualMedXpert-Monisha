@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "human_torso.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

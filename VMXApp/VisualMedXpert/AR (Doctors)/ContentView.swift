@@ -12,20 +12,21 @@ import FocusEntity
 import SmartHitTest
 
 struct ContentView: View {
-    @State private var isPlacementEnabled = false
+    @State private var placeModel = false
     @State private var selectedModel: String?
     @State private var modelConfirmedForPlacement: String?
     
-    var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull"]
+    var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull", "human_stomach", "human_pelvis", "human_teeth", "female_torso"]
+    var modelLabels: [String] = ["Female Skeleton", "Male Skeleton", "Human Heart", "Head Study", "Human Lungs", "Human Brain", "Human Body", "Human Kidney", "Human Eye", "Human Skull", "Human Stomach", "Human Pelvis", "Human Teeth", "Female Torso"]
     
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
             
-            if self.isPlacementEnabled {
-                PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
+            if self.placeModel {
+                PlacementButtonsView(isPlacementEnabled: self.$placeModel, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
             } else {
-                ModelPickerView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, models: self.models)
+                ModelPickerView(isPlacementEnabled: self.$placeModel, selectedModel: self.$selectedModel, models: self.models)
             }
         }
     }
@@ -93,37 +94,43 @@ struct ARViewContainer: UIViewRepresentable {
         @Binding var isPlacementEnabled: Bool
         @Binding var selectedModel: String? //optional string instead of string type
         
-        var models: [String]
+        //var models: [String]
+        var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull", "human_stomach", "human_pelvis", "human_teeth", "female_torso"]
+        var modelLabels: [String] = ["Female Skeleton", "Male Skeleton", "Human Heart", "Head Study", "Human Lungs", "Human Brain", "Human Body", "Human Kidney", "Human Eye", "Human Skull", "Human Stomach", "Human Pelvis", "Human Teeth", "Female Torso"]
+        
         
         var body: some View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 30) {
-                    ForEach(0 ..< self.models.count) {
-                        index in
-                        Button(action: {
-                            print("DEBUG: selected model with name: \(self.models[index])")
+                    ForEach(0 ..< self.models.count) { index in
+                        VStack {
+                            Button(action: {
+                                print("DEBUG: selected model with name: \(self.models[index])")
+                                
+                                self.selectedModel = self.models[index]
+                                
+                                self.isPlacementEnabled = true
+                            }) {
+                                Image(uiImage: UIImage(named: self.models[index])!)
+                                    .resizable()
+                                    .frame(height: 80)
+                                    .aspectRatio(1/1, contentMode: .fit)
+                                    .background(Color.white)
+                                    .cornerRadius(12)
+                            }
+                            .buttonStyle(PlainButtonStyle())
                             
-                            self.selectedModel = self.models[index]
-                            
-                            self.isPlacementEnabled = true
-                        }){
-                            Image(uiImage: UIImage(named: self.models[index])!)
-                                .resizable()
-                                .frame(height: 80)
-                                .aspectRatio(1/1, contentMode: .fit)
-                                .background(Color.white)
-                                .cornerRadius(12)
+                            Text(self.modelLabels[index])
+                                .foregroundColor(.white)
+                                .font(.caption)
+                                .lineLimit(1)
+                                .padding(.top, 8)
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        
                     }
-                    
                 }
-                
             }
             .padding(20)
             .background(Color.black.opacity(0.5))
-            
         }
     }
 
