@@ -64,7 +64,7 @@ struct ScheduleScanView: View {
         let authData = (username + ":" + password).data(using: .utf8)!.base64EncodedString()
         request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
         
-        // using users email fetch and display their booking 
+        // using users email fetch and display their booking
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 if let response = try? JSONDecoder().decode([Scan].self, from: data) {

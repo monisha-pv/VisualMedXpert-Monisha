@@ -23,7 +23,6 @@ struct ViewPatientBookings: View {
                             Text(scan.name)
                             Spacer()
                             Text(scan.date)
-
                         }
                     }
                 }
