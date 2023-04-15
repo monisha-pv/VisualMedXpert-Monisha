@@ -39,14 +39,6 @@ struct PatientBookingDetailView: View {
                     }
                 })
             }
-            Section {
-                Button(action: {self.deletePatientBooking()}, label: {
-                    HStack {
-                        Image(systemName: "checkmark")
-                        Text("Confirm Booking")
-                    }
-                })
-            }
         }.listStyle(GroupedListStyle())
             .navigationTitle(scan.name)
             .navigationBarItems(trailing: Button(action: {self.showEdit.toggle()}, label: {

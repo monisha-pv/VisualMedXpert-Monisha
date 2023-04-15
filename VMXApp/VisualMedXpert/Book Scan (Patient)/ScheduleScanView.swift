@@ -242,4 +242,3 @@ struct ScheduleScanView_Previews: PreviewProvider {
         ScheduleScanView()
     }
 }
-

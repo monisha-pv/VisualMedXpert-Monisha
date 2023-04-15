@@ -40,6 +40,7 @@ struct DoctorDetailView: View {
                     }
                 })
             }
+            
         }.listStyle(GroupedListStyle())
             .navigationTitle(patient.fullname)
             .navigationBarItems(trailing: Button(action: {self.showEdit.toggle()}, label: {
