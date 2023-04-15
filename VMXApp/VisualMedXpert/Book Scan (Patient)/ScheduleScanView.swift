@@ -109,12 +109,12 @@ struct ScanAddView : View {
     @State var centre: String = ""
     @State var date: String = ""
     @State var time: String = ""
+    @State private var selectedDate = Date()
     
     var genders = ["Male", "Female", "Prefer to not say"]
     var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
     var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
     var availabletimes = ["13:00", "14:30", "16:00", "16:45", "17:00"]
-    
     
     var body: some View {
         NavigationView{
@@ -141,7 +141,7 @@ struct ScanAddView : View {
                             Text($0)
                         }
                     }
-                    TextField("Date (DD/MM/YYYY)", text: $date)
+                    DatePicker("Date", selection: $selectedDate, displayedComponents: [.date])
                     Picker("Time", selection: $time) {
                         Text("").tag("")
                         ForEach(availabletimes, id: \.self) {
@@ -168,15 +168,19 @@ struct ScanAddView : View {
     }
     
     
-    
     func postScheduleScan() {
         guard let url = URL(string: "http://10.212.78.114:8000/scans/") else {
             print("The API is down/not connected")
             return
         }
         
+        // Convert selected date to a string
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dateString = dateFormatter.string(from: selectedDate)
+        
         let scanData = Scan(id: 0, name: self.name, email: self.email, gender: self.gender, condition: self.condition, scanType: self.scanType,
-                            centre: self.centre, date: self.date, time: self.time)
+                            centre: self.centre, date: dateString, time: self.time)
         
         guard let encoded = try? JSONEncoder().encode(scanData) else {
             print("JSON failed to encode")
@@ -205,8 +209,6 @@ struct ScanAddView : View {
             print("No user is logged in")
             return
         }
-
-        
         
         URLSession.shared.dataTask(with: request) { data, response,
             error in
@@ -225,6 +227,7 @@ struct ScanAddView : View {
         }.resume()
     }
 }
+
 
 func notifyPatient(name: String) {
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {

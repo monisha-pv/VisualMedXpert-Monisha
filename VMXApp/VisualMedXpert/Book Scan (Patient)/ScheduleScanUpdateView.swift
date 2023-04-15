@@ -20,6 +20,7 @@ struct ScheduleScanUpdateView: View {
      var date: String = ""
      var time: String = ""
     
+    
     var genders = ["Male", "Female", "Prefer not to say"]
     var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
     var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
