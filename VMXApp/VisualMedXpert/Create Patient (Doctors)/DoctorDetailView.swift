@@ -23,6 +23,8 @@ struct DoctorDetailView: View {
             Section {
                 Text("FullName: \(patient.fullname)")
                 Text("Date Of Birth: \(patient.dob)")
+                Text("Gender: \(patient.gender)")
+                Text("NHS Number: \(patient.nhsNo)")
                 Text("Address: \(patient.address)")
                 Text("Condition: \(patient.medcondition)")
                 Text("Description: \(patient.patientdescription)")
@@ -86,6 +88,6 @@ struct DoctorDetailView: View {
 
 struct DoctorDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DoctorDetailView(patient: Patient(id: 0, fullname: "Monisha V", dob: "31/12/1999", address: "123 ETON ROAD", medcondition: "Cancer", patientdescription: "test patient description", symptoms: "test symptoms", medication: "test medication", notes: "test notes"))
+        DoctorDetailView(patient: Patient(id: 0, fullname: "Monisha V", dob: "31/12/1999", gender: "Female", nhsNo: "P00000", address: "123 ETON ROAD", medcondition: "Cancer", patientdescription: "test patient description", symptoms: "test symptoms", medication: "test medication", notes: "test notes"))
     }
 }

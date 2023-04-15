@@ -82,12 +82,16 @@ struct PatientAddView : View {
     
     @State var fullname: String = ""
     @State var dob: String = ""
+    @State var gender: String = ""
+    @State var nhsNo: String = ""
     @State var address: String = ""
     @State var medcondition: String = ""
     @State var patientdescription: String = ""
     @State var symptoms: String = ""
     @State var medication: String = ""
     @State var notes: String = ""
+    
+    var genders = ["Male", "Female", "Preferred Not To Say"]
     
     
     var body: some View {
@@ -96,6 +100,13 @@ struct PatientAddView : View {
                 Section{
                     TextField("Full name", text: $fullname)
                     TextField("Date Of Birth (DD/MM/YYYY)", text: $dob)
+                    Picker("Gender", selection: $gender) {
+                        Text("").tag("") // Add empty tag to avoid selection issues
+                        ForEach(genders, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    TextField("NHS Number", text: $nhsNo)
                     TextField("Address", text: $address)
                     TextField("Medical Condition", text: $medcondition)
                     TextField("Condition Description", text: $patientdescription)
@@ -122,7 +133,7 @@ struct PatientAddView : View {
             return
         }
         
-        let patientData = Patient(id: 0, fullname: self.fullname, dob: self.dob, address: self.address, medcondition: self.medcondition,
+        let patientData = Patient(id: 0, fullname: self.fullname, dob: self.dob, gender: self.gender, nhsNo: self.nhsNo, address: self.address, medcondition: self.medcondition,
                                   patientdescription: self.patientdescription, symptoms: self.symptoms, medication: self.medication, notes: self.notes)
         
         guard let encoded = try? JSONEncoder().encode(patientData) else {

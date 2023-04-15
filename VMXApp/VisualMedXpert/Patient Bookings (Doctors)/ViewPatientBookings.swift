@@ -55,17 +55,16 @@ struct ViewPatientBookings: View {
         request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
         
         
-        URLSession.shared.dataTask(with: request) { data, response,
-            error in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let response = try?
-                    JSONDecoder().decode([Scan].self, from: data) {
+                if let response = try? JSONDecoder().decode([Scan].self, from: data) {
                     DispatchQueue.main.async {
                         self.scans = response
                     }
                 }
+            } else if let error = error {
+                print("Error: \(error.localizedDescription)")
             }
-            
         }.resume()
     }
 }

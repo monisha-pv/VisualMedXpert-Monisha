@@ -22,6 +22,7 @@ struct ScheduleScanDetailView: View {
             }
             Section {
                 Text("Full name: \(scan.name)")
+                Text("Email: \(scan.email)")
                 Text("Gender: \(scan.gender)")
                 Text("Condition: \(scan.condition)")
                 Text("Type of Scan: \(scan.scanType)")

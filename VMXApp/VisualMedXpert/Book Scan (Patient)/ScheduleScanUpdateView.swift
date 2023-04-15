@@ -12,6 +12,7 @@ struct ScheduleScanUpdateView: View {
     @Binding var scan: Scan
     
      var name: String = ""
+     var email: String = ""
      var gender: String = ""
      var condition: String = ""
      var scanType: String = ""
@@ -30,6 +31,7 @@ struct ScheduleScanUpdateView: View {
             List{
                 Section{
                     TextField("Full name", text: $scan.name)
+                    TextField("Email", text: $scan.email)
                     Picker("Gender", selection: $scan.gender) {
                         Text("").tag("") // Add empty tag to avoid selection issues
                         ForEach(genders, id: \.self) {

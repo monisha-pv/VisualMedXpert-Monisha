@@ -18,4 +18,5 @@ struct Scan: Codable, Hashable, Identifiable {
     var centre: String
     var date: String
     var time: String
+    
 }

@@ -13,6 +13,8 @@ struct Patient: Codable, Hashable, Identifiable {
     var id: Int
     var fullname: String
     var dob: String
+    var gender: String
+    var nhsNo: String
     var address: String
     var medcondition: String
     var patientdescription: String

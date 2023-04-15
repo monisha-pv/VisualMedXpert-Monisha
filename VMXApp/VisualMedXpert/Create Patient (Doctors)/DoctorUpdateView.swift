@@ -13,12 +13,16 @@ struct DoctorUpdateView: View {
     
     var fullname: String = ""
     var dob: String = ""
+    var gender: String = ""
+    var nhsNo: String = ""
     var address: String = ""
     var medcondition: String = ""
     var patientdescription: String = ""
     var symptoms: String = ""
     var medication: String = ""
     var notes: String = ""
+    
+    var genders = ["Male", "Female", "Preferred Not To Say"]
     
     
     
@@ -28,6 +32,13 @@ struct DoctorUpdateView: View {
                 Section{
                     TextField("Patient Fullname", text: $patient.fullname)
                     TextField("Date Of Birth (DD/MM/YYYY)", text: $patient.dob)
+                    Picker("Gender", selection: $patient.gender) {
+                        Text("").tag("") // Add empty tag to avoid selection issues
+                        ForEach(genders, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    TextField("NHS Number", text: $patient.nhsNo)
                     TextField("Address", text: $patient.address)
                     TextField("Medical Condition", text: $patient.medcondition)
                     TextField("Condition Description", text: $patient.patientdescription)
@@ -50,8 +61,7 @@ struct DoctorUpdateView: View {
             
         }
         
-//        let patientData = Patient(id: 0, fullname: self.fullname, dob: self.dob, address: self.address, medcondition: self.medcondition,
-//                                  patientdescription: self.patientdescription, symptoms: self.symptoms, medication: self.medication, notes: self.notes)
+
         let patientData = self.patient
         guard let encoded = try? JSONEncoder().encode(patientData) else {
             print("JSON failed to encode")

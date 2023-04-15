@@ -64,22 +64,35 @@ struct ScheduleScanView: View {
         let authData = (username + ":" + password).data(using: .utf8)!.base64EncodedString()
         request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
         
-        // using users email fetch and display their booking
+        // using user's email fetch and display their bookings
+        guard let email = Auth.auth().currentUser?.email else {
+            print("No user is logged in")
+            return
+        }
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data {
-                if let response = try? JSONDecoder().decode([Scan].self, from: data) {
-                    if let email = Auth.auth().currentUser?.email {
-                        let showPatientDetails = response.filter { $0.email == email }
-                        DispatchQueue.main.async {
-                            self.scans = showPatientDetails
-                        }
-                    }
+            if let error = error {
+                print("Error fetching scan bookings: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received from the API")
+                return
+            }
+            
+            do {
+                let response = try JSONDecoder().decode([Scan].self, from: data)
+                let showPatientDetails = response.filter { $0.email == email }
+                DispatchQueue.main.async {
+                    self.scans = showPatientDetails
                 }
+            } catch {
+                print("Error decoding API response: \(error.localizedDescription)")
             }
         }.resume()
     }
 }
-
 
 struct ScanAddView : View {
     @Environment(\.presentationMode) var presentationMode
