@@ -1,5 +1,3 @@
-// Customize the codemagic.yaml
-
 workflows:
   vmx-workflow:
     name: VMX Pipeline
