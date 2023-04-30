@@ -4,6 +4,8 @@ workflows:
     scripts:
       - name: CICD Started
         script: echo "Welcome to CICD set up"
+      - name: Build VMX
+        script: xcodebuild build -workspace "VisualMedXpert.xcworkspace" -scheme "VisualMedXpert" CODE_SIGN_INDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
     publishing:
       email:
         recipients:
