@@ -16,8 +16,8 @@ struct ContentView: View {
     @State private var selectedModel: String?
     @State private var modelConfirmedForPlacement: String?
     
-    var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull", "human_stomach", "human_pelvis", "human_teeth", "female_torso"]
-    var modelLabels: [String] = ["Female Skeleton", "Male Skeleton", "Human Heart", "Head Study", "Human Lungs", "Human Brain", "Human Body", "Human Kidney", "Human Eye", "Human Skull", "Human Stomach", "Human Pelvis", "Human Teeth", "Female Torso"]
+    var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull", "human_stomach", "human_teeth", "female_torso"]
+    var modelLabels: [String] = ["Female Skeleton", "Male Skeleton", "Human Heart", "Head Study", "Human Lungs", "Human Brain", "Human Body", "Human Kidney", "Human Eye", "Human Skull", "Human Stomach", "Human Teeth", "Female Torso"]
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -95,8 +95,8 @@ struct ARViewContainer: UIViewRepresentable {
         @Binding var selectedModel: String? //optional string instead of string type
         
         //var models: [String]
-        var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull", "human_stomach", "human_pelvis", "human_teeth", "female_torso"]
-        var modelLabels: [String] = ["Female Skeleton", "Male Skeleton", "Human Heart", "Head Study", "Human Lungs", "Human Brain", "Human Body", "Human Kidney", "Human Eye", "Human Skull", "Human Stomach", "Human Pelvis", "Human Teeth", "Female Torso"]
+        var models: [String] = ["femaleSkeleton", "maleSkeleton", "humanHeart", "headStudy", "humanLungs", "humanBrain", "human_body", "human_kidney", "human_eye1", "human_skull", "human_stomach", "human_teeth", "female_torso"]
+        var modelLabels: [String] = ["Female Skeleton", "Male Skeleton", "Human Heart", "Head Study", "Human Lungs", "Human Brain", "Human Body", "Human Kidney", "Human Eye", "Human Skull", "Human Stomach", "Human Teeth", "Female Torso"]
         
         
         var body: some View {

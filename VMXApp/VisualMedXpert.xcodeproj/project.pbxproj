@@ -43,7 +43,6 @@
 		E3A4397029E310C100A3F63B /* COVIDImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */; };
 		E3A4397229E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E3A4397129E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel */; };
 		E3A4397429E319E700A3F63B /* COVID19_Positive_Negative.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4397329E319E700A3F63B /* COVID19_Positive_Negative.swift */; };
-		E3A4397A29E5064700A3F63B /* human_pelvis.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4397929E5064600A3F63B /* human_pelvis.usdz */; };
 		E3A4397C29E5066800A3F63B /* human_teeth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4397B29E5066700A3F63B /* human_teeth.usdz */; };
 		E3A4397E29E5066D00A3F63B /* female_torso.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3A4397D29E5066D00A3F63B /* female_torso.usdz */; };
 		E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */; };
@@ -141,7 +140,6 @@
 		E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "COVIDImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		E3A4397129E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "COVID19PosNegClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		E3A4397329E319E700A3F63B /* COVID19_Positive_Negative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID19_Positive_Negative.swift; sourceTree = "<group>"; };
-		E3A4397929E5064600A3F63B /* human_pelvis.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = human_pelvis.usdz; sourceTree = "<group>"; };
 		E3A4397B29E5066700A3F63B /* human_teeth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = human_teeth.usdz; sourceTree = "<group>"; };
 		E3A4397D29E5066D00A3F63B /* female_torso.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = female_torso.usdz; sourceTree = "<group>"; };
 		E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPatientBookings.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				E37E691E29E91CB400CCCF50 /* human_stomach.usdz */,
 				E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */,
 				E3A4396329D9CA2500A3F63B /* human_skull.usdz */,
-				E3A4397929E5064600A3F63B /* human_pelvis.usdz */,
 				E3A4397B29E5066700A3F63B /* human_teeth.usdz */,
 				E3A4397D29E5066D00A3F63B /* female_torso.usdz */,
 			);
@@ -556,7 +553,6 @@
 				E3721D58299ED30600088BDF /* femaleSkeleton.usdz in Resources */,
 				E3721D60299EF30000088BDF /* headStudy.usdz in Resources */,
 				E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */,
-				E3A4397A29E5064700A3F63B /* human_pelvis.usdz in Resources */,
 				E3B6A24E291F4EEC008904BD /* GoogleService-Info.plist in Resources */,
 				E3A4395E29D9CA1300A3F63B /* human_kidney.usdz in Resources */,
 				E3A4395C29D9CA0D00A3F63B /* human_body.usdz in Resources */,
