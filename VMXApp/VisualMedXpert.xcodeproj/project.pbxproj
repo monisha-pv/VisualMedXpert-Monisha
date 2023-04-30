@@ -30,6 +30,8 @@
 		E38601D52944125700F414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B6A227291F4E4E008904BD /* Assets.xcassets */; };
 		E38601DA29442AC900F414B7 /* SmartHitTest in Frameworks */ = {isa = PBXBuildFile; productRef = E38601D929442AC900F414B7 /* SmartHitTest */; };
 		E3862FD529971BC90053634E /* DirectImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3862FD429971BC90053634E /* DirectImageClassification.swift */; };
+		E386AE4629FE4124009DE429 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386AE4529FE4124009DE429 /* LoginViewTests.swift */; };
+		E386AE4829FE437E009DE429 /* ChooseOptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386AE4729FE437E009DE429 /* ChooseOptionTests.swift */; };
 		E3A4395429D86BF400A3F63B /* CreatePatientStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395329D86BF400A3F63B /* CreatePatientStruct.swift */; };
 		E3A4395829D86D3800A3F63B /* VMXChatbotStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395729D86D3800A3F63B /* VMXChatbotStruct.swift */; };
 		E3A4395A29D86D5600A3F63B /* SwiftUI Chatbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395929D86D5600A3F63B /* SwiftUI Chatbot.swift */; };
@@ -49,7 +51,6 @@
 		E3A8CEEE29D85A31008D47AA /* PatientBookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */; };
 		E3B6A224291F4E4B008904BD /* VisualMedXpertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */; };
 		E3B6A226291F4E4B008904BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A225291F4E4B008904BD /* LoginView.swift */; };
-		E3B6A235291F4E4E008904BD /* VisualMedXpertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A234291F4E4E008904BD /* VisualMedXpertTests.swift */; };
 		E3B6A23F291F4E4E008904BD /* VisualMedXpertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A23E291F4E4E008904BD /* VisualMedXpertUITests.swift */; };
 		E3B6A241291F4E4E008904BD /* VisualMedXpertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A240291F4E4E008904BD /* VisualMedXpertUITestsLaunchTests.swift */; };
 		E3B6A24E291F4EEC008904BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3B6A24D291F4EEB008904BD /* GoogleService-Info.plist */; };
@@ -62,6 +63,9 @@
 		E3BCC89C29C28804006594F4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3BCC89B29C28804006594F4 /* FirebaseFirestoreSwift */; };
 		E3BCC8A629C3D428006594F4 /* PatientLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */; };
 		E3BCC8A829C3D736006594F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCC8A729C3D736006594F4 /* User.swift */; };
+		E3D4539C29F7271000139F7B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E3D4539B29F7271000139F7B /* FirebaseAuth */; };
+		E3D453B129FE2B7F00139F7B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E3D453B029FE2B7F00139F7B /* FirebaseFirestore */; };
+		E3D453B229FE2DDB00139F7B /* VMXUnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D453AE29FE29B800139F7B /* VMXUnitTesting.swift */; };
 		E3DC878C29CFAAE5006BC434 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC878B29CFAAE5006BC434 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,7 +112,7 @@
 		E3721D51299A91D800088BDF /* ScheduleScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanModel.swift; sourceTree = "<group>"; };
 		E3721D53299A9E2200088BDF /* ScheduleScanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanDetailView.swift; sourceTree = "<group>"; };
 		E3721D55299AA59A00088BDF /* ScheduleScanUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScanUpdateView.swift; sourceTree = "<group>"; };
-		E3721D57299ED30600088BDF /* femaleSkeleton.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = femaleSkeleton.usdz; path = ../../../../Downloads/femaleSkeleton.usdz; sourceTree = "<group>"; };
+		E3721D57299ED30600088BDF /* femaleSkeleton.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = femaleSkeleton.usdz; sourceTree = "<group>"; };
 		E3721D5B299ED80D00088BDF /* maleSkeleton.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = maleSkeleton.usdz; path = ../../../../Downloads/maleSkeleton.usdz; sourceTree = "<group>"; };
 		E3721D5D299EDBAE00088BDF /* humanHeart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = humanHeart.usdz; path = ../../../../Downloads/humanHeart.usdz; sourceTree = "<group>"; };
 		E3721D5F299EF2FF00088BDF /* headStudy.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = headStudy.usdz; path = ../../../../Downloads/headStudy.usdz; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 		E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorUpdateView.swift; sourceTree = "<group>"; };
 		E38601D32944084C00F414B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E3862FD429971BC90053634E /* DirectImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectImageClassification.swift; sourceTree = "<group>"; };
+		E386AE4529FE4124009DE429 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
+		E386AE4729FE437E009DE429 /* ChooseOptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseOptionTests.swift; sourceTree = "<group>"; };
 		E3A4395329D86BF400A3F63B /* CreatePatientStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePatientStruct.swift; sourceTree = "<group>"; };
 		E3A4395729D86D3800A3F63B /* VMXChatbotStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMXChatbotStruct.swift; sourceTree = "<group>"; };
 		E3A4395929D86D5600A3F63B /* SwiftUI Chatbot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI Chatbot.swift"; sourceTree = "<group>"; };
@@ -132,8 +138,8 @@
 		E3A4395D29D9CA1300A3F63B /* human_kidney.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_kidney.usdz; path = ../../../../Downloads/human_kidney.usdz; sourceTree = "<group>"; };
 		E3A4396129D9CA1F00A3F63B /* human_eye1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_eye1.usdz; path = ../../../../Downloads/human_eye1.usdz; sourceTree = "<group>"; };
 		E3A4396329D9CA2500A3F63B /* human_skull.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_skull.usdz; path = ../../../../Downloads/human_skull.usdz; sourceTree = "<group>"; };
-		E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "COVIDImageClassifier 1.mlmodel"; path = "../../../../Desktop/COVIDImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
-		E3A4397129E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "COVID19PosNegClassifier 1.mlmodel"; path = "../../../../Desktop/COVID19PosNegClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		E3A4396F29E310C100A3F63B /* COVIDImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "COVIDImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		E3A4397129E318DC00A3F63B /* COVID19PosNegClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "COVID19PosNegClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		E3A4397329E319E700A3F63B /* COVID19_Positive_Negative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID19_Positive_Negative.swift; sourceTree = "<group>"; };
 		E3A4397929E5064600A3F63B /* human_pelvis.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_pelvis.usdz; path = ../../../../Downloads/human_pelvis.usdz; sourceTree = "<group>"; };
 		E3A4397B29E5066700A3F63B /* human_teeth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = human_teeth.usdz; path = ../../../../Downloads/human_teeth.usdz; sourceTree = "<group>"; };
@@ -147,7 +153,6 @@
 		E3B6A227291F4E4E008904BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3B6A22A291F4E4E008904BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E3B6A230291F4E4E008904BD /* VisualMedXpertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisualMedXpertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3B6A234291F4E4E008904BD /* VisualMedXpertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualMedXpertTests.swift; sourceTree = "<group>"; };
 		E3B6A23A291F4E4E008904BD /* VisualMedXpertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisualMedXpertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6A23E291F4E4E008904BD /* VisualMedXpertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualMedXpertUITests.swift; sourceTree = "<group>"; };
 		E3B6A240291F4E4E008904BD /* VisualMedXpertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualMedXpertUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -157,6 +162,8 @@
 		E3B6A2622920550E008904BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLoginView.swift; sourceTree = "<group>"; };
 		E3BCC8A729C3D736006594F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E3D4539629F725A000139F7B /* VisualMedXpertTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisualMedXpertTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E3D453AE29FE29B800139F7B /* VMXUnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMXUnitTesting.swift; sourceTree = "<group>"; };
 		E3DC878B29CFAAE5006BC434 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +194,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D4539C29F7271000139F7B /* FirebaseAuth in Frameworks */,
+				E3D453B129FE2B7F00139F7B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				E3B6A222291F4E4B008904BD /* VisualMedXpert */,
-				E3B6A233291F4E4E008904BD /* VisualMedXpertTests */,
 				E3B6A23D291F4E4E008904BD /* VisualMedXpertUITests */,
 				E37E691129E51F5200CCCF50 /* VMXNotificationServiceExtension */,
 				E3B6A221291F4E4B008904BD /* Products */,
@@ -343,7 +351,9 @@
 				E3A4395229D86B4F00A3F63B /* Book Scan (Patient) */,
 				E3B6A227291F4E4E008904BD /* Assets.xcassets */,
 				E3B6A24D291F4EEB008904BD /* GoogleService-Info.plist */,
+				E3D4539629F725A000139F7B /* VisualMedXpertTests-Bridging-Header.h */,
 				E3B6A229291F4E4E008904BD /* Preview Content */,
+				E3B6A233291F4E4E008904BD /* VisualMedXpertTests */,
 			);
 			path = VisualMedXpert;
 			sourceTree = "<group>";
@@ -359,7 +369,9 @@
 		E3B6A233291F4E4E008904BD /* VisualMedXpertTests */ = {
 			isa = PBXGroup;
 			children = (
-				E3B6A234291F4E4E008904BD /* VisualMedXpertTests.swift */,
+				E3D453AE29FE29B800139F7B /* VMXUnitTesting.swift */,
+				E386AE4529FE4124009DE429 /* LoginViewTests.swift */,
+				E386AE4729FE437E009DE429 /* ChooseOptionTests.swift */,
 			);
 			path = VisualMedXpertTests;
 			sourceTree = "<group>";
@@ -443,6 +455,10 @@
 				E3B6A232291F4E4E008904BD /* PBXTargetDependency */,
 			);
 			name = VisualMedXpertTests;
+			packageProductDependencies = (
+				E3D4539B29F7271000139F7B /* FirebaseAuth */,
+				E3D453B029FE2B7F00139F7B /* FirebaseFirestore */,
+			);
 			productName = VisualMedXpertTests;
 			productReference = E3B6A230291F4E4E008904BD /* VisualMedXpertTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -483,6 +499,7 @@
 					};
 					E3B6A22F291F4E4E008904BD = {
 						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1420;
 						TestTargetID = E3B6A21F291F4E4B008904BD;
 					};
 					E3B6A239291F4E4E008904BD = {
@@ -613,7 +630,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B6A235291F4E4E008904BD /* VisualMedXpertTests.swift in Sources */,
+				E386AE4829FE437E009DE429 /* ChooseOptionTests.swift in Sources */,
+				E386AE4629FE4124009DE429 /* LoginViewTests.swift in Sources */,
+				E3D453B229FE2DDB00139F7B /* VMXUnitTesting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,15 +899,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CFT49HLDMK;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fyp.VisualMedXpertTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "VisualMedXpert/VisualMedXpertTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisualMedXpert.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VisualMedXpert";
@@ -900,15 +927,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CFT49HLDMK;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fyp.VisualMedXpertTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "VisualMedXpert/VisualMedXpertTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisualMedXpert.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VisualMedXpert";
@@ -1084,6 +1118,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		E3D4539B29F7271000139F7B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E3D453B029FE2B7F00139F7B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3B6A24F291F4F4A008904BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

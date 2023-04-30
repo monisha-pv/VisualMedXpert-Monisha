@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 class Patient(models.Model):
     fullname = models.CharField(max_length=200)
     dob = models.CharField(max_length=200)
@@ -12,6 +13,7 @@ class Patient(models.Model):
     symptoms = models.CharField(max_length=500)
     medication = models.CharField(max_length=500)
     notes = models.CharField(max_length=600)
+
 
     def __str__(self):
         return self.fullname + ' ' + self.dob
