@@ -1,14 +1,13 @@
 //
-//  VisualMedXpertTests.swift
-//  VisualMedXpertTests
+//  VMXUnitTesting.swift
+//  VisualMedXpertUITests
 //
-//  Created by Monisha Vadivelu on 12/11/2022.
+//  Created by Monisha Vadivelu on 30/04/2023.
 //
 
 import XCTest
-@testable import VisualMedXpert
 
-final class VisualMedXpertTests: XCTestCase {
+final class VMXUnitTesting: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
