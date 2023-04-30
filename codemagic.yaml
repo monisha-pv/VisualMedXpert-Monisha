@@ -6,9 +6,10 @@ workflows:
         script: echo "Welcome to CICD set up"
       - name: Build VMX
         script: |
-          cd /Users/monishavadivelu/VisualMedXpert-Monisha/VMXApp/
+          cd $FCI_BUILD_DIR/VMXApp/
           xcodebuild build -project VisualMedXpert.xcodeproj -scheme VisualMedXpert CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
     publishing: 
       email:
         recipients:
           - monishapvadivelu@outlook.com
+
