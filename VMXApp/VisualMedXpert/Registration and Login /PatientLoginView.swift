@@ -111,7 +111,7 @@ struct UserDetailView: View {
         VStack {
             
             if let displayName = userModel.displayName {
-                Text("Welcome, \(displayName)!")
+                Text("Welcome to VisualMedXpert, \(displayName)!")
                     .font(.headline)
                     .padding(.bottom, 20)
             }
@@ -124,8 +124,12 @@ struct UserDetailView: View {
                 Text("Email: \(email)")
             }
             
-            Spacer()
+            Spacer().frame(height: 40)
+            Text("Please choose an option below to continue.")
+                .font(.subheadline)
+                .padding(.bottom, 30)
             
+            Spacer().frame(height: 90)
             NavigationLink(destination: ScheduleScanView().navigationBarBackButtonHidden(false)) {
                 Text("Book a scan appointment")
                     .padding()

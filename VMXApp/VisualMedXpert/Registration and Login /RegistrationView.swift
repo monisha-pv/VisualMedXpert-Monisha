@@ -28,7 +28,7 @@ struct RegistrationView: View {
                     .resizable()
                     .scaledToFit()
                     .padding()
-
+                
                 HStack {
                     Text("  Email:")
                     Spacer()
