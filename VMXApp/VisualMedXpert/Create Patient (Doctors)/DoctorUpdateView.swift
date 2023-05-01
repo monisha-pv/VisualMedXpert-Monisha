@@ -12,7 +12,7 @@ struct DoctorUpdateView: View {
     @Binding var patient: Patient
     
     var fullname: String = ""
-    var dob: String = ""
+    var dob: String = "" 
     var gender: String = ""
     var nhsNo: String = ""
     var address: String = ""

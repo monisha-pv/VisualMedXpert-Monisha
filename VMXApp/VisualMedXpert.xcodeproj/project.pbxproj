@@ -26,12 +26,14 @@
 		E37E691F29E91CB500CCCF50 /* human_stomach.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E37E691E29E91CB400CCCF50 /* human_stomach.usdz */; };
 		E380CDAC29208F3400B9B891 /* DoctorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */; };
 		E380CDAE2920A09900B9B891 /* DoctorUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */; };
+		E38325E229FF7CC300C710DC /* RegistrationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38325E129FF7CC300C710DC /* RegistrationViewTests.swift */; };
+		E38325E629FF979F00C710DC /* ManagePatientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38325E529FF979F00C710DC /* ManagePatientTests.swift */; };
+		E38325E729FF984500C710DC /* DoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A25C292044AB008904BD /* DoctorView.swift */; };
 		E38601D42944084C00F414B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38601D32944084C00F414B7 /* ContentView.swift */; };
 		E38601D52944125700F414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B6A227291F4E4E008904BD /* Assets.xcassets */; };
 		E38601DA29442AC900F414B7 /* SmartHitTest in Frameworks */ = {isa = PBXBuildFile; productRef = E38601D929442AC900F414B7 /* SmartHitTest */; };
 		E3862FD529971BC90053634E /* DirectImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3862FD429971BC90053634E /* DirectImageClassification.swift */; };
 		E386AE4629FE4124009DE429 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386AE4529FE4124009DE429 /* LoginViewTests.swift */; };
-		E386AE4829FE437E009DE429 /* ChooseOptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386AE4729FE437E009DE429 /* ChooseOptionTests.swift */; };
 		E3A4395429D86BF400A3F63B /* CreatePatientStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395329D86BF400A3F63B /* CreatePatientStruct.swift */; };
 		E3A4395829D86D3800A3F63B /* VMXChatbotStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395729D86D3800A3F63B /* VMXChatbotStruct.swift */; };
 		E3A4395A29D86D5600A3F63B /* SwiftUI Chatbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4395929D86D5600A3F63B /* SwiftUI Chatbot.swift */; };
@@ -48,6 +50,7 @@
 		E3A8CEE829D8453D008D47AA /* ViewPatientBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */; };
 		E3A8CEEC29D8571D008D47AA /* PatientBookingUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */; };
 		E3A8CEEE29D85A31008D47AA /* PatientBookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */; };
+		E3AB972E29FFC1010087117D /* human_mouth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3AB972D29FFC1010087117D /* human_mouth.usdz */; };
 		E3B6A224291F4E4B008904BD /* VisualMedXpertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */; };
 		E3B6A226291F4E4B008904BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A225291F4E4B008904BD /* LoginView.swift */; };
 		E3B6A23F291F4E4E008904BD /* VisualMedXpertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A23E291F4E4E008904BD /* VisualMedXpertUITests.swift */; };
@@ -64,7 +67,6 @@
 		E3BCC8A829C3D736006594F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCC8A729C3D736006594F4 /* User.swift */; };
 		E3D4539C29F7271000139F7B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E3D4539B29F7271000139F7B /* FirebaseAuth */; };
 		E3D453B129FE2B7F00139F7B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E3D453B029FE2B7F00139F7B /* FirebaseFirestore */; };
-		E3D453B229FE2DDB00139F7B /* VMXUnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D453AE29FE29B800139F7B /* VMXUnitTesting.swift */; };
 		E3DC878C29CFAAE5006BC434 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC878B29CFAAE5006BC434 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,10 +128,11 @@
 		E37E691E29E91CB400CCCF50 /* human_stomach.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = human_stomach.usdz; sourceTree = "<group>"; };
 		E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailView.swift; sourceTree = "<group>"; };
 		E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorUpdateView.swift; sourceTree = "<group>"; };
+		E38325E129FF7CC300C710DC /* RegistrationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewTests.swift; sourceTree = "<group>"; };
+		E38325E529FF979F00C710DC /* ManagePatientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePatientTests.swift; sourceTree = "<group>"; };
 		E38601D32944084C00F414B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E3862FD429971BC90053634E /* DirectImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectImageClassification.swift; sourceTree = "<group>"; };
 		E386AE4529FE4124009DE429 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
-		E386AE4729FE437E009DE429 /* ChooseOptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseOptionTests.swift; sourceTree = "<group>"; };
 		E3A4395329D86BF400A3F63B /* CreatePatientStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePatientStruct.swift; sourceTree = "<group>"; };
 		E3A4395729D86D3800A3F63B /* VMXChatbotStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMXChatbotStruct.swift; sourceTree = "<group>"; };
 		E3A4395929D86D5600A3F63B /* SwiftUI Chatbot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI Chatbot.swift"; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 		E3A8CEE729D8453D008D47AA /* ViewPatientBookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPatientBookings.swift; sourceTree = "<group>"; };
 		E3A8CEEB29D8571D008D47AA /* PatientBookingUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingUpdateView.swift; sourceTree = "<group>"; };
 		E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingDetailView.swift; sourceTree = "<group>"; };
+		E3AB972D29FFC1010087117D /* human_mouth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = human_mouth.usdz; sourceTree = "<group>"; };
 		E3B6A220291F4E4B008904BD /* VisualMedXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualMedXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualMedXpertApp.swift; sourceTree = "<group>"; };
 		E3B6A225291F4E4B008904BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -161,7 +165,6 @@
 		E3BCC8A529C3D428006594F4 /* PatientLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLoginView.swift; sourceTree = "<group>"; };
 		E3BCC8A729C3D736006594F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E3D4539629F725A000139F7B /* VisualMedXpertTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisualMedXpertTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		E3D453AE29FE29B800139F7B /* VMXUnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMXUnitTesting.swift; sourceTree = "<group>"; };
 		E3DC878B29CFAAE5006BC434 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +226,7 @@
 				E3A4396329D9CA2500A3F63B /* human_skull.usdz */,
 				E3A4397B29E5066700A3F63B /* human_teeth.usdz */,
 				E3A4397D29E5066D00A3F63B /* female_torso.usdz */,
+				E3AB972D29FFC1010087117D /* human_mouth.usdz */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,9 +370,9 @@
 		E3B6A233291F4E4E008904BD /* VisualMedXpertTests */ = {
 			isa = PBXGroup;
 			children = (
-				E3D453AE29FE29B800139F7B /* VMXUnitTesting.swift */,
+				E38325E129FF7CC300C710DC /* RegistrationViewTests.swift */,
 				E386AE4529FE4124009DE429 /* LoginViewTests.swift */,
-				E386AE4729FE437E009DE429 /* ChooseOptionTests.swift */,
+				E38325E529FF979F00C710DC /* ManagePatientTests.swift */,
 			);
 			path = VisualMedXpertTests;
 			sourceTree = "<group>";
@@ -554,6 +558,7 @@
 				E3721D60299EF30000088BDF /* headStudy.usdz in Resources */,
 				E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */,
 				E3B6A24E291F4EEC008904BD /* GoogleService-Info.plist in Resources */,
+				E3AB972E29FFC1010087117D /* human_mouth.usdz in Resources */,
 				E3A4395E29D9CA1300A3F63B /* human_kidney.usdz in Resources */,
 				E3A4395C29D9CA0D00A3F63B /* human_body.usdz in Resources */,
 				E3A4397C29E5066800A3F63B /* human_teeth.usdz in Resources */,
@@ -626,9 +631,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E386AE4829FE437E009DE429 /* ChooseOptionTests.swift in Sources */,
+				E38325E729FF984500C710DC /* DoctorView.swift in Sources */,
+				E38325E229FF7CC300C710DC /* RegistrationViewTests.swift in Sources */,
+				E38325E629FF979F00C710DC /* ManagePatientTests.swift in Sources */,
 				E386AE4629FE4124009DE429 /* LoginViewTests.swift in Sources */,
-				E3D453B229FE2DDB00139F7B /* VMXUnitTesting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

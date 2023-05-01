@@ -1,8 +1,8 @@
 //
-//  VMXUnitTesting.swift
-//  VisualMedXpertUITests
+//  RegistrationViewTests.swift
+//  VisualMedXpertTests
 //
-//  Created by Monisha Vadivelu on 30/04/2023.
+//  Created by Monisha Vadivelu on 01/05/2023.
 //
 
 import XCTest
@@ -17,12 +17,12 @@ import Firebase
 class StringExtensionTests: XCTestCase {
     
     func testIsValidEmail_ValidEmail() {
-        let email = "user@example.com"
+        let email = "newuser@example.com"
         XCTAssertTrue(email.isValidEmail)
     }
     
     func testIsValidEmail_InvalidEmail() {
-        let email = "user@example"
+        let email = "newuser@test"
         XCTAssertFalse(email.isValidEmail)
     }
     
@@ -32,4 +32,3 @@ class StringExtensionTests: XCTestCase {
     }
     
 }
-

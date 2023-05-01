@@ -140,6 +140,7 @@ struct PatientAddView : View {
             print("JSON failed to encode")
             return
         }
+        print(String(data: encoded, encoding: .utf8) ?? "Failed to convert encoded data to string")
         
         let username = "monishavadivelu"
         let password = "monisha1999"
