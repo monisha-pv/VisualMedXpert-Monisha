@@ -15,7 +15,7 @@ struct ChooseOptionView: View {
         NavigationView {
             VStack{
                 NavigationLink(destination: DoctorView()) {
-                    Text("Manage Patient")
+                    Text("Manage Patient Records")
                         .padding()
                         .background(.black)
                         .foregroundColor(.white)
@@ -24,7 +24,7 @@ struct ChooseOptionView: View {
                 
                 Spacer().frame(height: 50)
                 NavigationLink(destination: ContentView()) {
-                    Text("Augumented Reality (Medical Trainee)")
+                    Text("Augumented Reality (Medical Learning)")
                         .padding()
                         .background(.black)
                         .foregroundColor(.white)
@@ -42,7 +42,7 @@ struct ChooseOptionView: View {
                 
                 Spacer().frame(height: 50)
                 NavigationLink(destination: ViewPatientBookings()) {
-                    Text("View Patient Bookings")
+                    Text("Patient Booking Requests")
                         .padding()
                         .background(.black)
                         .foregroundColor(.white)

@@ -11,21 +11,21 @@ struct ScheduleScanUpdateView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var scan: Scan
     
-     var name: String = ""
-     var email: String = ""
-     var gender: String = ""
-     var condition: String = ""
-     var scanType: String = ""
-     var centre: String = ""
-     var date: String = ""
-     var time: String = ""
+    var name: String = ""
+    var email: String = ""
+    var gender: String = ""
+    var condition: String = ""
+    var scanType: String = ""
+    var centre: String = ""
+    var date: String = ""
+    var time: String = ""
+    @State private var selectedTime = Date()
     
     
     var genders = ["Male", "Female", "Prefer not to say"]
     var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
     var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
-    var availabletimes = ["13:00", "14:30", "16:00", "16:45", "17:00"]
-
+    
     
     var body: some View {
         NavigationView {
@@ -54,12 +54,7 @@ struct ScheduleScanUpdateView: View {
                         }
                     }
                     TextField("Date", text: $scan.date)
-                    Picker("Time", selection: $scan.time) {
-                        Text("").tag("")
-                        ForEach(availabletimes, id: \.self) {
-                            Text($0)
-                        }
-                    }
+                    DatePicker("Time", selection: $selectedTime, displayedComponents: [.hourAndMinute])
                 }
             }.listStyle(GroupedListStyle())
                 .navigationTitle(Text("Update"))
@@ -71,15 +66,21 @@ struct ScheduleScanUpdateView: View {
     
     func putScheduleScan() {
         guard let url = URL(string: "http://10.212.78.114:8000/scans/\(self.scan.id)")
-            else {
+        else {
             print("The API is down/not connected")
             fatalError("endpoint not active")
             
         }
         
-//        let scanData = ScanElement(id: 0, name: self.name, gender: self.gender, condition: self.condition, scanType: self.scanType,
-//                                  centre: self.centre, date: self.date, time: self.time)
-        let scanData = self.scan
+        // Convert selected time to a string
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let timeString = timeFormatter.string(from: selectedTime)
+        
+        // Update scan data
+        var scanData = self.scan
+        scanData.time = timeString
+        
         guard let encoded = try? JSONEncoder().encode(scanData) else {
             print("JSON failed to encode")
             return
@@ -102,7 +103,7 @@ struct ScheduleScanUpdateView: View {
                     DispatchQueue.main.async {
                         //self.patients = response
                         presentationMode.wrappedValue.dismiss()
-                     
+                        
                     }
                     return
                 }

@@ -109,12 +109,12 @@ struct ScanAddView : View {
     @State var centre: String = ""
     @State var date: String = ""
     @State var time: String = ""
+    @State private var selectedTime = Date()
     @State private var selectedDate = Date()
     
     var genders = ["Male", "Female", "Prefer to not say"]
     var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
     var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
-    var availabletimes = ["13:00", "14:30", "16:00", "16:45", "17:00"]
     
     var body: some View {
         NavigationView{
@@ -142,12 +142,7 @@ struct ScanAddView : View {
                         }
                     }
                     DatePicker("Date", selection: $selectedDate, displayedComponents: [.date])
-                    Picker("Time", selection: $time) {
-                        Text("").tag("")
-                        ForEach(availabletimes, id: \.self) {
-                            Text($0)
-                        }
-                    }
+                    DatePicker("Time", selection: $selectedTime, displayedComponents: [.hourAndMinute])
                 }
                 Toggle("Enable notification for booking confirmations", isOn: $enableNotificaition)
                         .onChange(of: enableNotificaition) { value in
@@ -179,8 +174,13 @@ struct ScanAddView : View {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let dateString = dateFormatter.string(from: selectedDate)
         
+        // Convert selected time to a string
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let timeString = timeFormatter.string(from: selectedTime)
+        
         let scanData = Scan(id: 0, name: self.name, email: self.email, gender: self.gender, condition: self.condition, scanType: self.scanType,
-                            centre: self.centre, date: dateString, time: self.time)
+                            centre: self.centre, date: dateString, time: timeString)
         
         guard let encoded = try? JSONEncoder().encode(scanData) else {
             print("JSON failed to encode")

@@ -19,11 +19,12 @@ struct PatientBookingUpdateView: View {
      var centre: String = ""
      var date: String = ""
      var time: String = ""
+    @State private var selectedTime = Date()
     
     var genders = ["Male", "Female", "Prefer not to say"]
     var scantypes = ["X-ray", "CT Scan", "MRI Scan", "Electrocardiogram (ECG)", "PET scan", "Angiography", "Ultrasound scan", "Echocardiogram"]
     var centres = ["Derriford Hospital", "Nuffield Health Plymouth Hospital"]
-    var availabletimes = ["13:00", "14:30", "16:00", "16:45", "17:00"]
+
 
     
     var body: some View {
@@ -53,12 +54,7 @@ struct PatientBookingUpdateView: View {
                         }
                     }
                     TextField("Date", text: $scan.date)
-                    Picker("Time", selection: $scan.time) {
-                        Text("").tag("")
-                        ForEach(availabletimes, id: \.self) {
-                            Text($0)
-                        }
-                    }
+                    DatePicker("Time", selection: $selectedTime, displayedComponents: [.hourAndMinute])
                 }
             }.listStyle(GroupedListStyle())
                 .navigationTitle(Text("Update Booking"))
@@ -75,8 +71,16 @@ struct PatientBookingUpdateView: View {
             fatalError("endpoint not active")
             
         }
+        
+        // Convert selected time to a string
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let timeString = timeFormatter.string(from: selectedTime)
+        
+        // Update scan data
+        var scanData = self.scan
+        scanData.time = timeString
 
-        let scanData = self.scan
         guard let encoded = try? JSONEncoder().encode(scanData) else {
             print("JSON failed to encode")
             return
