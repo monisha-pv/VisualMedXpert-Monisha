@@ -6,56 +6,57 @@
 //
 
 import XCTest
-import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 @testable import VisualMedXpert
 
-class ManagePatientViewTests: XCTestCase {
-    
+class ManagePatientTests: XCTestCase {
+
     func testGetPatients() {
-        let session = URLSession(configuration: .default)
-        let viewModel = DoctorView()
-        let mockData = "[{\"id\":3,\"fullname\":\"Rebecca Peterson\",\"dob\":\"17/03/1988\",\"gender\":\"Female\",\"nhsNo\":\"P00000\",\"address\":\"111 Green Street, IG3 3PX\",\"medcondition\":\"Blood Cancer\",\"patientdescription\":\"Louise has been suffering with blooc cancer for 13 years\",\"symptoms\":\"Paleness\",\"medication\":\"Cyclomide\",\"notes\":\"Blood test due in 5 days\"}]"
-        let url = URL(string: "http://10.212.78.114:8000/patients/")!
-        
-        // Register MockURLProtocol for URL
-        MockURLProtocol.mockResponses[url] = mockData.data(using: .utf8)
-        URLProtocol.registerClass(MockURLProtocol.self)
-        
-        // Test getPatients function
-        viewModel.getPatients()
-    }
-}
 
+        let doctorView = DoctorView()
+        let expectation = XCTestExpectation(description: "Fetch patients")
+        
 
-class MockURLProtocol: URLProtocol {
-    
-    // This dictionary maps URLs to mock responses
-    static var mockResponses: [URL: Data] = [:]
-    
-    // Override this function to intercept network requests
-    override class func canInit(with request: URLRequest) -> Bool {
-        return true
-    }
-    
-    // Override this function to return the mock response
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-        return request
-    }
-    
-    // Override this function to return the mock response data
-    override func startLoading() {
-        if let data = MockURLProtocol.mockResponses[request.url!] {
-            let response = URLResponse(url: request.url!, mimeType: nil, expectedContentLength: data.count, textEncodingName: nil)
-            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-            client?.urlProtocol(self, didLoad: data)
-            client?.urlProtocolDidFinishLoading(self)
+        doctorView.getPatients()
+        
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            XCTAssertGreaterThan(doctorView.patients.count, 0, "No patients found")
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 10.0)
     }
     
-    // Override this function to do nothing
-    override func stopLoading() {}
-    
+    func testPatientAddView() {
+        let doctorView = DoctorView()
+        let expectation = XCTestExpectation(description: "Add new patient")
+        let patientAddView = PatientAddView(function: {
+            doctorView.getPatients()
+            expectation.fulfill()
+        })
+        
+        
+        patientAddView.fullname = "John Smith"
+        patientAddView.dob = "01/01/1990"
+        patientAddView.gender = "Male"
+        patientAddView.nhsNo = "1234567890"
+        patientAddView.address = "123 Main St"
+        patientAddView.medcondition = "Flu"
+        patientAddView.patientdescription = "Symptoms include coughing and fever"
+        patientAddView.symptoms = "Coughing, fever"
+        patientAddView.medication = "Tylenol"
+        patientAddView.notes = "Prescribed rest and fluids"
+        
+        patientAddView.postPatients()
+        
+
+        wait(for: [expectation], timeout: 60.0)
+        XCTAssertGreaterThan(doctorView.patients.count, 0, "New patient not added")
+    }
 }
+
 
 

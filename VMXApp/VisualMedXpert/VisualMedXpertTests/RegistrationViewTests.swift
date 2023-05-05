@@ -14,7 +14,7 @@ import Firebase
 
 @testable import VisualMedXpert
 
-class StringExtensionTests: XCTestCase {
+class StringExtensionRegistrationTests: XCTestCase {
     
     func testIsValidEmail_ValidEmail() {
         let email = "newuser@example.com"
