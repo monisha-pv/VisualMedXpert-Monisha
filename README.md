@@ -2,13 +2,13 @@
 
 VisualMedXpert (VMX) is a medical support system which holds the potential to transform the medical industry by utilising intuitive and innovative tools and technologies such as augmented reality to enhance medical education for medical learners under their doctor’s supervision and image classification to improve diagnosis for COVID-19 and pneumonia. VMX offers patients a non-complex booking process that eliminates the need for traditional methods such as phone appointments, therefore reducing long wait times. Doctors can modify patient bookings in case of issues. Additionally, patients can seek answers to their health concerns or issues they face while using the application using SwiftUI chatbot.
 
-# Main Features
+<img src="https://user-images.githubusercontent.com/72807111/236783334-72e46d7d-6048-4a98-8ae4-11bc5bb4f5bf.png" width="70%" height="50%">
 
-<img src="https://user-images.githubusercontent.com/72807111/236783227-6e2bbb2c-ed8c-4494-bf79-452952892dbf.png" width="20%" height="20%">
+# Main Features
 
 ## Augmented Reality
 
-Use gest
+**Use scale, translate and rotate gestures.**
 
 <img src="https://user-images.githubusercontent.com/72807111/236780602-ed51351a-52f7-44cb-9426-a8f3146d018c.PNG" width="20%" height="20%">
 <img src="https://user-images.githubusercontent.com/72807111/236780643-3994b843-fcbb-499f-97f9-72367ef9b0fc.PNG" width="20%" height="20%">
