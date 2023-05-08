@@ -7,7 +7,7 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 # Core Features
 
 ## Augmented Reality (AR)
-**Use scale, translate and rotate gestures**
+**Use scale, translate and rotate gestures**<br>
 <img src="https://user-images.githubusercontent.com/72807111/236780602-ed51351a-52f7-44cb-9426-a8f3146d018c.PNG" width="20%" height="20%">
 <img src="https://user-images.githubusercontent.com/72807111/236780643-3994b843-fcbb-499f-97f9-72367ef9b0fc.PNG" width="20%" height="20%">
 
