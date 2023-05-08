@@ -8,7 +8,7 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 
 ## Augmented Reality
 
-**Use scale, translate and rotate gestures.**
+**Use scale, translate and rotate gestures**
 
 <img src="https://user-images.githubusercontent.com/72807111/236780602-ed51351a-52f7-44cb-9426-a8f3146d018c.PNG" width="20%" height="20%">
 <img src="https://user-images.githubusercontent.com/72807111/236780643-3994b843-fcbb-499f-97f9-72367ef9b0fc.PNG" width="20%" height="20%">
@@ -19,7 +19,7 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 
 <img src="https://user-images.githubusercontent.com/72807111/236780920-77788d2e-46e3-4361-83df-087e7870d163.PNG" width="20%" height="20%">
 
-## Datasets 
+## Image Classification Datasets 
 
 [COVID-19, Viral Pneumonia or Healthy](https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset)<br>
 [COVID-19 Postive or Negative](https://www.kaggle.com/datasets/mr3suvhro/covid-19-xray-image-dataset-with-huge-samples)
@@ -35,6 +35,8 @@ The RESTful APIs was developed using the Django framework in conjunction with th
 Install Xcode https://developer.apple.com/xcode/<br>
 You can use the iOS simulators or connect your Apple device and build the application. Once the build has succeeded the application will be ready to use.<br>
 The application will run on any iOS device with software version 16.4.1 or above.  
+
+
 
 
 
