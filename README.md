@@ -4,23 +4,18 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 
 <img src="https://user-images.githubusercontent.com/72807111/236783334-72e46d7d-6048-4a98-8ae4-11bc5bb4f5bf.png" width="70%" height="50%">
 
-# Main Features
+# Core Features
 
-## Augmented Reality
-
+## Augmented Reality (AR)
 **Use scale, translate and rotate gestures**
-
 <img src="https://user-images.githubusercontent.com/72807111/236780602-ed51351a-52f7-44cb-9426-a8f3146d018c.PNG" width="20%" height="20%">
 <img src="https://user-images.githubusercontent.com/72807111/236780643-3994b843-fcbb-499f-97f9-72367ef9b0fc.PNG" width="20%" height="20%">
 
-## Image Classification 
-
-**Upload an chest X-ray from your devices gallery**
-
+## Image Classification (AI)
+**Upload an chest X-ray from your devices gallery and view the prediction scores**
 <img src="https://user-images.githubusercontent.com/72807111/236780920-77788d2e-46e3-4361-83df-087e7870d163.PNG" width="20%" height="20%">
 
 ## Image Classification Datasets 
-
 [COVID-19, Viral Pneumonia or Healthy](https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset)<br>
 [COVID-19 Postive or Negative](https://www.kaggle.com/datasets/mr3suvhro/covid-19-xray-image-dataset-with-huge-samples)
 
@@ -30,19 +25,18 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 - SwiftUI Chatbot
 
 ## Technologies
-
+### iOS Application
 VisualMedXpert (VMX) was developed using Xcode, a development environment for IOS applications, using Swift as the programming language and SwiftUI as the framework.
-
+### Backend
 The RESTful APIs was developed using the Django framework in conjunction with the Python programming language, with the data being stored in an SQLite3 database. 
 
 ## Installation 
-
 Install Xcode https://developer.apple.com/xcode/<br>
 You can use the iOS simulators or connect your Apple device and build the application. Once the build has succeeded the application will be ready to use.<br>
 The application will run on any iOS device with software version 16.4.1 or above.  
 
-
-
+## Credits 
+This project was created by Monisha Vadivelu. 
 
 
 
