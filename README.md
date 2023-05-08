@@ -5,10 +5,11 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 
 //<img src="https://user-images.githubusercontent.com/72807111/236774629-fe84930d-6709-4826-a18c-b80e5b102190.PNG" width="20%" height="20%">
 
-<div style="display:flex; flex-direction:row;">
-  <img src="https://user-images.githubusercontent.com/72807111/236774629-fe84930d-6709-4826-a18c-b80e5b102190.PNG" style="width:50%; height:auto; margin-right:10px;">
-  <img src="https://user-images.githubusercontent.com/72807111/236774629-fe84930d-6709-4826-a18c-b80e5b102190.PNG" style="width:50%; height:auto;">
-</div>
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/72807111/236774629-fe84930d-6709-4826-a18c-b80e5b102190.PNG" width="50%" />
+  <img src="https://user-images.githubusercontent.com/72807111/236774629-fe84930d-6709-4826-a18c-b80e5b102190.PNG" width="50%" />
+</p>
+
 
 ## Technologies:
 
