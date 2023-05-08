@@ -12,7 +12,7 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 <img src="https://user-images.githubusercontent.com/72807111/236780643-3994b843-fcbb-499f-97f9-72367ef9b0fc.PNG" width="20%" height="20%">
 
 ## Image Classification (AI)
-**Upload an chest X-ray from your devices gallery and view the prediction scores**
+**Upload an chest X-ray from your devices gallery and view the prediction scores**<br>
 <img src="https://user-images.githubusercontent.com/72807111/236780920-77788d2e-46e3-4361-83df-087e7870d163.PNG" width="20%" height="20%">
 
 ## Image Classification Datasets 
