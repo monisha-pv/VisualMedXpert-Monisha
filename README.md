@@ -24,6 +24,11 @@ VisualMedXpert (VMX) is a medical support system which holds the potential to tr
 [COVID-19, Viral Pneumonia or Healthy](https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset)<br>
 [COVID-19 Postive or Negative](https://www.kaggle.com/datasets/mr3suvhro/covid-19-xray-image-dataset-with-huge-samples)
 
+## Other features
+- Patient Data Management
+- Scan Booking Management
+- SwiftUI Chatbot
+
 ## Technologies
 
 VisualMedXpert (VMX) was developed using Xcode, a development environment for IOS applications, using Swift as the programming language and SwiftUI as the framework.
