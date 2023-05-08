@@ -18,7 +18,7 @@ Main Features:
 
 ## Datasets 
 
-[COVID-19, Viral Pneumonia or Healthy](https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset)
+[COVID-19, Viral Pneumonia or Healthy](https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset)<br>
 [COVID-19 Postive or Negative](https://www.kaggle.com/datasets/mr3suvhro/covid-19-xray-image-dataset-with-huge-samples)
 
 ## Technologies:
