@@ -4,6 +4,10 @@ By Monisha Vadivelu
 
 COMP3000 - Final Year Project
 
-VisualMedXpert is an iOS application with augmented reality technology and artificial intelligence created using the software XCode using the programming language Swift.
+VisualMedXpert (VMX) was developed using Xcode, a development environment for IOS applications, using Swift as the programming language and SwiftUI as the framework.
 
-The application has been created for doctors and patients. 
+The RESTful APIs was developed using the Django framework in conjunction with the Python programming language, with the data being stored in an SQLite3 database. 
+
+VisualMedXpert (VMX) is a medical support system which holds the potential to transform the medical industry by utilising intuitive and innovative tools and technologies such as augmented reality to enhance medical education for medical learners under their doctor’s supervision and image classification to improve diagnosis for COVID-19 and pneumonia. VMX offers patients a non-complex booking process that eliminates the need for traditional methods such as phone appointments, therefore reducing long wait times. Doctors can modify patient bookings in case of issues. Additionally, patients can seek answers to their health concerns or issues they face while using the application using SwiftUI chatbot.
+
+
