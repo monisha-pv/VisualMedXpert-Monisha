@@ -54,6 +54,13 @@
 		E3ABCB6E2A05B4F40085D10C /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ABCB6C2A05B42C0085D10C /* Patient.swift */; };
 		E3ABCB6F2A05B7430085D10C /* DoctorUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAD2920A09800B9B891 /* DoctorUpdateView.swift */; };
 		E3ABCB702A05B74C0085D10C /* DoctorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380CDAB29208F3400B9B891 /* DoctorDetailView.swift */; };
+		E3ABCB772A099F2F0085D10C /* LV_hypertrophic_tissue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3ABCB712A099F2E0085D10C /* LV_hypertrophic_tissue.usdz */; };
+		E3ABCB782A099F2F0085D10C /* human_diaphragm.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3ABCB722A099F2E0085D10C /* human_diaphragm.usdz */; };
+		E3ABCB792A099F2F0085D10C /* malignant_hypertension_artery.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3ABCB732A099F2E0085D10C /* malignant_hypertension_artery.usdz */; };
+		E3ABCB7A2A099F2F0085D10C /* young_adult_tissue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3ABCB742A099F2E0085D10C /* young_adult_tissue.usdz */; };
+		E3ABCB7B2A099F2F0085D10C /* CAD_calcification.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3ABCB752A099F2E0085D10C /* CAD_calcification.usdz */; };
+		E3ABCB7E2A099F820085D10C /* combined_coronary_vasculature.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3ABCB7D2A099F820085D10C /* combined_coronary_vasculature.usdz */; };
+		E3ABCB802A09A6970085D10C /* sectioned_human_heart.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E3ABCB7F2A09A6970085D10C /* sectioned_human_heart.usdz */; };
 		E3B6A224291F4E4B008904BD /* VisualMedXpertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */; };
 		E3B6A226291F4E4B008904BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A225291F4E4B008904BD /* LoginView.swift */; };
 		E3B6A23F291F4E4E008904BD /* VisualMedXpertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6A23E291F4E4E008904BD /* VisualMedXpertUITests.swift */; };
@@ -155,6 +162,13 @@
 		E3A8CEED29D85A31008D47AA /* PatientBookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBookingDetailView.swift; sourceTree = "<group>"; };
 		E3AB972D29FFC1010087117D /* human_mouth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = human_mouth.usdz; sourceTree = "<group>"; };
 		E3ABCB6C2A05B42C0085D10C /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		E3ABCB712A099F2E0085D10C /* LV_hypertrophic_tissue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = LV_hypertrophic_tissue.usdz; sourceTree = "<group>"; };
+		E3ABCB722A099F2E0085D10C /* human_diaphragm.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = human_diaphragm.usdz; sourceTree = "<group>"; };
+		E3ABCB732A099F2E0085D10C /* malignant_hypertension_artery.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = malignant_hypertension_artery.usdz; sourceTree = "<group>"; };
+		E3ABCB742A099F2E0085D10C /* young_adult_tissue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = young_adult_tissue.usdz; sourceTree = "<group>"; };
+		E3ABCB752A099F2E0085D10C /* CAD_calcification.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = CAD_calcification.usdz; sourceTree = "<group>"; };
+		E3ABCB7D2A099F820085D10C /* combined_coronary_vasculature.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = combined_coronary_vasculature.usdz; sourceTree = "<group>"; };
+		E3ABCB7F2A09A6970085D10C /* sectioned_human_heart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sectioned_human_heart.usdz; sourceTree = "<group>"; };
 		E3B6A220291F4E4B008904BD /* VisualMedXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualMedXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6A223291F4E4B008904BD /* VisualMedXpertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualMedXpertApp.swift; sourceTree = "<group>"; };
 		E3B6A225291F4E4B008904BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -234,6 +248,13 @@
 				E3A4397B29E5066700A3F63B /* human_teeth.usdz */,
 				E3A4397D29E5066D00A3F63B /* female_torso.usdz */,
 				E3AB972D29FFC1010087117D /* human_mouth.usdz */,
+				E3ABCB752A099F2E0085D10C /* CAD_calcification.usdz */,
+				E3ABCB722A099F2E0085D10C /* human_diaphragm.usdz */,
+				E3ABCB712A099F2E0085D10C /* LV_hypertrophic_tissue.usdz */,
+				E3ABCB732A099F2E0085D10C /* malignant_hypertension_artery.usdz */,
+				E3ABCB742A099F2E0085D10C /* young_adult_tissue.usdz */,
+				E3ABCB7D2A099F820085D10C /* combined_coronary_vasculature.usdz */,
+				E3ABCB7F2A09A6970085D10C /* sectioned_human_heart.usdz */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -558,6 +579,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3ABCB802A09A6970085D10C /* sectioned_human_heart.usdz in Resources */,
 				E3721D66299F28A600088BDF /* humanBrain.usdz in Resources */,
 				E3721D5E299EDBAE00088BDF /* humanHeart.usdz in Resources */,
 				E3721D64299F230700088BDF /* humanLungs.usdz in Resources */,
@@ -567,13 +589,19 @@
 				E3721D60299EF30000088BDF /* headStudy.usdz in Resources */,
 				E3A4396229D9CA1F00A3F63B /* human_eye1.usdz in Resources */,
 				E3B6A24E291F4EEC008904BD /* GoogleService-Info.plist in Resources */,
+				E3ABCB782A099F2F0085D10C /* human_diaphragm.usdz in Resources */,
+				E3ABCB7B2A099F2F0085D10C /* CAD_calcification.usdz in Resources */,
+				E3ABCB7A2A099F2F0085D10C /* young_adult_tissue.usdz in Resources */,
 				E3AB972E29FFC1010087117D /* human_mouth.usdz in Resources */,
 				E3A4395E29D9CA1300A3F63B /* human_kidney.usdz in Resources */,
 				E3A4395C29D9CA0D00A3F63B /* human_body.usdz in Resources */,
 				E3A4397C29E5066800A3F63B /* human_teeth.usdz in Resources */,
 				E37E691F29E91CB500CCCF50 /* human_stomach.usdz in Resources */,
+				E3ABCB772A099F2F0085D10C /* LV_hypertrophic_tissue.usdz in Resources */,
 				E3721D5C299ED80D00088BDF /* maleSkeleton.usdz in Resources */,
 				E3A4396429D9CA2500A3F63B /* human_skull.usdz in Resources */,
+				E3ABCB792A099F2F0085D10C /* malignant_hypertension_artery.usdz in Resources */,
+				E3ABCB7E2A099F820085D10C /* combined_coronary_vasculature.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
