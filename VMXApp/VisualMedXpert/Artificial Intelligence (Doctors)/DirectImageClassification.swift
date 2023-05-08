@@ -13,6 +13,15 @@ struct DirectImageClassification: View {
     var body: some View {
         NavigationView {
             VStack{
+                
+                Text("VMX Image Classification")
+                    .font(.title2)
+                    .padding(.bottom, 10)
+                
+                Text("Please choose an option below to continue.")
+                    .font(.subheadline)
+                    .padding(.bottom, 30)
+                
                 NavigationLink(destination: XrayImageClassification()) {
                     Text("Covid, Viral Pneumonia or Normal")
                         .padding()
