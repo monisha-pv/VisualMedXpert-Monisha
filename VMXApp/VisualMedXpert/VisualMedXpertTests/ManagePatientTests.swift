@@ -53,7 +53,7 @@ class ManagePatientTests: XCTestCase {
         patientAddView.postPatients()
         
 
-        wait(for: [expectation], timeout: 60.0)
+        wait(for: [expectation], timeout: 20.0)
         XCTAssertGreaterThan(doctorView.patients.count, 0, "New patient not added")
     }
 }

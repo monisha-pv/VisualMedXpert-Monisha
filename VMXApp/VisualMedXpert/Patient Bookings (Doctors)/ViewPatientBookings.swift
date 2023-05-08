@@ -36,7 +36,7 @@ struct ViewPatientBookings: View {
 
     
     func getPatientBooking() {
-        guard let url = URL(string: "http://10.212.78.114:8000/scans/") else {
+        guard let url = URL(string: "http://10.212.78.114:8080/scans/") else {
             print("The API is down/not connected")
             return
             

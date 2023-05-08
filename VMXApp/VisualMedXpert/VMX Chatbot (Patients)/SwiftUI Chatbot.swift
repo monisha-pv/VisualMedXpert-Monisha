@@ -22,7 +22,7 @@ struct SwiftUI_Chatbot: View {
                 
                 Image(systemName: "text.bubble.fill")
                     .font(.system(size: 20))
-                    .foregroundColor(Color.red)
+                    .foregroundColor(Color.black)
             }
             
             ScrollView {
@@ -36,7 +36,7 @@ struct SwiftUI_Chatbot: View {
                             Text(newMessage)
                                 .padding()
                                 .foregroundColor(.white)
-                                .background(.red.opacity(0.8))
+                                .background(.black.opacity(0.8))
                                 .cornerRadius(10)
                                 .padding(.horizontal, 16)
                                 .padding(.bottom, 10)
